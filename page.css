@@ -42,6 +42,7 @@ body h1 {
   color: var(--color-jeune);
   font-weight: bold;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 
@@ -60,8 +61,7 @@ header {
 }
 
 .header-content {
-  position: fixed;
-  /* Fixo no topo */
+  position: fixed; /* Fixo no topo */
   padding-top: 0px;
   top: 0px;
   display: flex;
@@ -69,6 +69,8 @@ header {
   justify-content: center;
   right: 0px;
   left: 0px;
+  background-color: var(--color-violet);
+  z-index: 1000; 
 }
 
 header h1 {
@@ -77,6 +79,7 @@ header h1 {
   background-color: var(--color-violet);
   border-radius: 20px 20px 20px 20px;
   margin-left: 5px;
+
 }
 
 nav ul {
@@ -125,6 +128,7 @@ section h2 {
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
+  scroll-margin-top: 250px;
 }
 
 
@@ -156,6 +160,7 @@ section h2 {
   flex-wrap: wrap;
   align-items: center;
   padding: 20px 0;
+  scroll-margin-top: 200px;
 }
 
 .apropos-img img {
@@ -193,6 +198,8 @@ section h2 {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 20px 0;
+  scroll-margin-top: 200px;
 }
 
 
@@ -252,7 +259,12 @@ h3 {
 
 /* --------------------------------Projets --------------------------------*/
 .section-projets {
-  padding: 15px 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+  scroll-margin-top: 200px;
 }
 
 .projet-item {
@@ -265,7 +277,6 @@ h3 {
   border-radius: 15px;
   padding: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-  
 
 }
 
@@ -315,15 +326,21 @@ h3 {
 }
 
 /* Experience */
-.section-experiences .experience-item {
+.section-experiences {
+  padding: 0 20px;
+  scroll-margin-top: 200px;
+}
+
+
+.experience-item {
   background-color: var(--color-light-violet);
   border-radius: 15px;
-  padding: 15px 20px;
   margin-bottom: 25px;
   display: flex;
   gap: 15px;
   align-items: flex-start;
   color: var(--color-light-lilas);
+ 
 
 }
 
@@ -355,6 +372,7 @@ h3 {
   max-width: 960px;
   margin: 60px auto;
   padding: 0 20px;
+  scroll-margin-top: 200px;
   
 }
 
@@ -422,6 +440,7 @@ h3 {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  scroll-margin-top: 200px;
 
 }
 
@@ -507,7 +526,7 @@ footer {
 
   .section-accueil,
   .section-apropos,
-  .projet-item {
+  .projet-item, .section-competences{
     flex-direction: column;
     align-items: center;
   }
@@ -515,11 +534,13 @@ footer {
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+   
   }
 
   .competences-list {
     flex-direction: column;
     gap: 25px;
+
   }
 
   .timeline {
