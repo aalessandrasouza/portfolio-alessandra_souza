@@ -41,6 +41,9 @@ body h1 {
   letter-spacing: 2px;
   text-align: center;
 }
+p {
+    padding: 10px;
+  }
 
 /* Conteneur centralisé avec espacement */
 .container {
@@ -139,7 +142,7 @@ section h2 {
 }
 
 .intro-text p {
-  margin-bottom: 8px;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-light-lilas);
@@ -148,6 +151,7 @@ section h2 {
 .intro-img img {
   max-width: 400px;
   border-radius: 25px;
+  
 }
 
 /* Section À propos */
@@ -165,13 +169,14 @@ section h2 {
   border-radius: 20px;
 }
 
+
 .apropos-text {
   background-color: var(--color-light-violet);
   color: var(--color-light-lilas);
   border-radius: 15px;
   padding: 20px;
   flex: 1 1 400px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-align: justify;
 }
 
@@ -240,6 +245,7 @@ h3 {
   font-size: 14px;
 }
 
+
 /* Section Projets */
 
 .section-projets h1 {
@@ -304,6 +310,7 @@ h3 {
 
 .btn:hover {
   background-color: var(--color-jeune);
+  transform: scale(1.05); /* Zoom leve para interatividade */
 }
 
 /* Section Expériences */
@@ -471,6 +478,7 @@ button[type="submit"]:hover {
 .contact-icons {
   margin-top: 20px;
   text-align: center;
+
 }
 
 .contact-icons a {
@@ -478,11 +486,12 @@ button[type="submit"]:hover {
   font-size: 1.8rem;
   margin: 0 15px;
   text-decoration: none;
-  transition: color 0.3s;
+  
 }
 
 .contact-icons a:hover {
   color: var(--color-violet);
+  transform: scale(1.05); /* Zoom leve para interatividade */
 }
 
 /* Footer */
@@ -534,4 +543,7 @@ footer {
     border-top: none;
     padding-left: 35px;
   }
+
+  
 }
+

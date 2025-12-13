@@ -1,0 +1,209 @@
+:root {
+  --color-violet: #431C53;
+  --color-light-violet: #493178;
+  --color-jeune: #FFDE59;
+  --color-light-lilas: #ddd5ff;
+  --color-light-beige: #f8ebd5;
+  --color-orange: #FFA500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-violet);
+  color: var(--color-light-lilas);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding-top: 150px;
+  /* Compensa header fixo */
+}
+
+.header-content {
+  position: fixed;  /* Fixe en haut de la page */
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: var(--color-violet);
+  z-index: 1000; /* Assure la superposition */
+}
+
+/* Conteneur centralisé */
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+  
+}
+
+header h1 {
+  color: var(--color-jeune);
+  font-weight: bold;
+  background-color: var(--color-violet);
+  border-radius: 20px 20px 20px 20px;
+  margin-left: 5px;
+}
+
+
+.section-projet-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--color-light-violet); /* Fundo secundário para destacar a seção */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil para profundidade */
+  scroll-margin-top: 350px; /* Ajuste para header fixo */
+
+}
+
+.projet-detail-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projet-detail-header h1 {
+  color: var(--color-jeune);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projet-detail-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.projet-detail-img {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.projet-detail-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para imagens */
+  transition: transform 0.3s ease; /* Animação suave ao hover */
+}
+
+.projet-detail-img img:hover {
+  transform: scale(1.05); /* Zoom leve para interatividade */
+}
+
+.projet-detail-text {
+  flex: 1 1 500px;
+  color: var(--color-light-lilas);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.projet-detail-text h2 {
+  color: var(--color-light-lilas);
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+.projet-detail-text p {
+  margin-bottom: 20px;
+}
+
+.projet-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.projet-technologies .icon {
+  width: 60px;
+  height: 60px;
+  transition: opacity 0.3s ease;
+}
+
+.projet-technologies .icon:hover {
+  opacity: 1;
+  /* Destaque ao hover */
+}
+
+.projet-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.projet-buttons .btn {
+  color: var(--color-violet);
+  background-color: var(--color-jeune);
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.projet-buttons .btn:hover {
+  transform: translateY(-2px);
+  /* Elevação sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background-color: var(--color-light-violet);
+  text-align: center;
+  padding: 50px 0;
+  color: var(--color-light-beige);
+  margin-top: 40px;
+}
+
+/* Responsividade para páginas de projeto */
+@media (max-width: 768px) {
+  .section-projet-detail {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .projet-detail-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projet-detail-header h1 {
+    font-size: 2rem;
+  }
+
+  .projet-detail-text {
+    font-size: 1rem;
+  }
+
+  .projet-technologies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projet-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
