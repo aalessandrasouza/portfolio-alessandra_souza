@@ -89,6 +89,7 @@ header h1 {
 .projet-detail-img {
   flex: 1 1 400px;
   text-align: center;
+  padding: 10px;
 }
 
 .projet-detail-img img {
@@ -109,6 +110,7 @@ header h1 {
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: justify;
+  padding: 35px;
 }
 
 .projet-detail-text h2 {

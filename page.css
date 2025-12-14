@@ -365,6 +365,7 @@ h3 {
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 80px;
+  flex-direction: row-reverse;
 }
 
 .timeline li {
