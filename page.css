@@ -39,7 +39,7 @@ body h1 {
   color: var(--color-jeune);
   font-weight: bold;
   letter-spacing: 2px;
-  text-align: center;
+  font-size: 40px;
 }
 p {
     padding: 10px;
@@ -112,7 +112,7 @@ section h1 {
   color: var(--color-jeune);
   margin-bottom: 20px;
   font-weight: 900;
-  text-align: center; /* Centralisation ajoutée pour uniformiser tous les titres h1 des sections */
+
 }
 
 section h2 {
@@ -129,7 +129,7 @@ section h2 {
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
-  scroll-margin-top: 250px;
+  scroll-margin-top: 380px;
 }
 
 .intro-text {
@@ -282,6 +282,7 @@ h3 {
   max-width: 570px;
   color: var(--color-light-lilas);
   font-weight: 300;
+  text-align: justify;
 }
 
 .container-projet {
@@ -310,13 +311,12 @@ h3 {
 
 .btn:hover {
   background-color: var(--color-jeune);
+  color: var(--color-violet);
   transform: scale(1.05); /* Zoom leve para interatividade */
 }
 
 /* Section Expériences */
 .section-experiences {
-  display: flex;
-  flex-wrap: wrap;
   scroll-margin-top: 200px;
 }
 
@@ -328,6 +328,7 @@ h3 {
   gap: 15px;
   align-items: flex-start;
   color: var(--color-light-lilas);
+  padding: 20px;
 }
 
 .experience-item h3 {
