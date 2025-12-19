@@ -20,11 +20,10 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   padding-top: 150px;
-  /* Compensa header fixo */
 }
 
 .header-content {
-  position: fixed;  /* Fixe en haut de la page */
+  position: fixed;  /* Fixé en haut de la page */
   top: 0px;
   right: 0px;
   left: 0px;
@@ -32,12 +31,11 @@ body {
   z-index: 1000; /* Assure la superposition */
 }
 
-/* Conteneur centralisé */
+/* Conteneur centré */
 .container {
   max-width: 960px;
   margin: 40px auto;
   padding: 0 20px;
-  
 }
 
 header h1 {
@@ -48,7 +46,6 @@ header h1 {
   margin-left: 5px;
 }
 
-
 .section-projet-detail {
   display: flex;
   flex-direction: column;
@@ -57,11 +54,10 @@ header h1 {
   padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: var(--color-light-violet); /* Fundo secundário para destacar a seção */
+  background-color: var(--color-light-violet); /* Fond secondaire pour mettre en valeur la section */
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra sutil para profundidade */
-  scroll-margin-top: 350px; /* Ajuste para header fixo */
-
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre subtile pour la profondeur */
+  scroll-margin-top: 350px; /* Ajustement pour le header fixe */
 }
 
 .projet-detail-header {
@@ -83,7 +79,6 @@ header h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-
 }
 
 .projet-detail-img {
@@ -96,12 +91,13 @@ header h1 {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para imagens */
-  transition: transform 0.3s ease; /* Animação suave ao hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre pour les images */
+  transition: transform 0.3s ease;
+  margin-bottom: 20px; /* Animation douce au survol */
 }
 
 .projet-detail-img img:hover {
-  transform: scale(1.05); /* Zoom leve para interatividade */
+  transform: scale(1.05); /* Léger zoom pour l’interactivité */
 }
 
 .projet-detail-text {
@@ -123,6 +119,11 @@ header h1 {
   margin-bottom: 20px;
 }
 
+.projet-detail-text ul {
+  margin-bottom: 25px;
+  list-style: none;
+}
+
 .projet-technologies {
   display: flex;
   flex-wrap: wrap;
@@ -140,8 +141,7 @@ header h1 {
 }
 
 .projet-technologies .icon:hover {
-  opacity: 1;
-  /* Destaque ao hover */
+  opacity: 1; /* Mise en valeur au survol */
 }
 
 .projet-buttons {
@@ -162,12 +162,11 @@ header h1 {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-
 }
 
 .projet-buttons .btn:hover {
   transform: translateY(-2px);
-  /* Elevação sutil */
+  /* Légère élévation */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -179,7 +178,7 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsividade para páginas de projeto */
+/* Responsive pour les pages de projet */
 @media (max-width: 768px) {
   .section-projet-detail {
     padding: 20px 10px;
