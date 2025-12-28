@@ -1,53 +1,57 @@
-// Função para o menu hambúrguer
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector("nav");
+// Fonction pour le menu hamburger
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
 
-  // Toggle do menu ao clicar no hambúrguer
-  hamburger.addEventListener("click", function () {
-    nav.classList.toggle("active"); // Adiciona/remove a classe 'active' no nav
+  // Bascule du menu en cliquant sur le hamburger
+  hamburger.addEventListener('click', function() {
+    nav.classList.toggle('active'); // Ajoute/supprime la classe 'active' sur nav
   });
 
-  // Fecha o menu ao clicar em um link (opcional, para melhor UX)
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      nav.classList.remove("active"); // Remove a classe 'active' ao clicar em um link
+  // Ferme le menu en cliquant sur un lien (optionnel, pour une meilleure UX)
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      nav.classList.remove('active'); // Supprime la classe 'active' en cliquant sur un lien
     });
   });
 });
 
-// Validação do formulário de contato
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
-  const emailInput = document.getElementById("email");
-  const messageTextarea = document.getElementById("message");
+// Validation et gestion du formulaire de contact
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form');
+  const emailInput = document.getElementById('email');
+  const messageTextarea = document.getElementById('message');
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener('submit', function(event) {
     let isValid = true;
     let errors = [];
 
-    // Validação do email: deve ter formato válido (ex.: usuario@dominio.com)
+    // Validation de l'email : doit avoir un format valide (ex. : utilisateur@domaine.com)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value.trim())) {
       isValid = false;
-      errors.push("E-mail inválido. Use um formato como exemplo@dominio.com.");
+      errors.push('E-mail invalide. Utilisez un format comme exemple@domaine.com.');
     }
 
-    // Validação da mensagem: deve ter pelo menos 10 caracteres
+    // Validation du message : doit avoir au moins 10 caractères
     if (messageTextarea.value.trim().length < 10) {
       isValid = false;
-      errors.push("A mensagem deve ter pelo menos 10 caracteres.");
+      errors.push('Le message doit contenir au moins 10 caractères.');
     }
 
-    // Se houver erros, previne o envio e mostra alertas
+    // S'il y a des erreurs, empêche l'envoi et affiche des alertes
     if (!isValid) {
-      event.preventDefault(); // Impede o envio do formulário
-      alert("Erros no formulário:\n" + errors.join("\n")); // Mostra os erros em um alerta
+      event.preventDefault(); // Empêche l'envoi du formulaire
+      alert('Erreurs dans le formulaire :\n' + errors.join('\n')); // Affiche les erreurs dans une alerte
     } else {
-      // Opcional: confirmação antes do envio (pode remover se não quiser)
-      if (!confirm("Tem certeza de que deseja enviar o formulário?")) {
+      // Optionnel : confirmation avant l'envoi
+      if (!confirm('Êtes-vous sûr de vouloir envoyer le formulaire ?')) {
         event.preventDefault();
+      } else {
+        // Feedback après soumission (Formspree gère l'envoi réel)
+        // Note : Formspree redirige automatiquement après envoi. Ce message est pour l'UX.
+        alert('Message envoyé avec succès ! Vous serez redirigé(e) vers une page de confirmation.');
       }
     }
   });
