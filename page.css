@@ -17,6 +17,133 @@
 
   /* Couleur supplémentaire */
   --color-orange: #FFA500;
+
+  --transition-speed: 0.3s ease;
+  --fade-duration: 0.8s ease;
+}
+/* Animations */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease-in-out 2s forwards; /* Desaparece após 2s */
+}
+
+.loader::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--color-light-lilas);
+  border-top: 5px solid var(--color-jeune);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Animações de entrada para seções */
+.section-accueil, .section-apropos, .section-competences, .section-projets, .section-experiences, .section-formations, .section-contact {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp var(--fade-duration) forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Atraso para animações sequenciais (opcional, para efeito cascata) */
+.section-apropos { animation-delay: 0.2s; }
+.section-competences { animation-delay: 0.4s; }
+.section-projets { animation-delay: 0.6s; }
+.section-experiences { animation-delay: 0.8s; }
+.section-formations { animation-delay: 1s; }
+.section-contact { animation-delay: 1.2s; }
+
+/* Hover melhorado em botões e links */
+.btn, nav a, .contact-icons a {
+  transition: all var(--transition-speed);
+}
+
+.btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 222, 89, 0.3);
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+.contact-icons a:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Animação de ícones em competências/projetos */
+.competence-item ul li .icon, .container-projet .icon {
+  transition: transform var(--transition-speed);
+}
+
+.competence-item ul li:hover .icon, .container-projet a:hover .icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Parallax leve no fundo (opcional, para profundidade) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(67, 28, 83, 0.1), rgba(73, 49, 120, 0.1));
+  z-index: -1;
+  animation: parallax 10s ease-in-out infinite alternate;
+}
+
+@keyframes parallax {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Transições no menu hambúrguer */
+.hamburger .bar {
+  transition: all var(--transition-speed);
+}
+
+.hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+/* Feedback visual no formulário (em vez de alertas) */
+.form-row input, .form-row select, .form-row textarea {
+  transition: border-color var(--transition-speed);
+}
+
+.form-row input:invalid, .form-row select:invalid, .form-row textarea:invalid {
+  border-color: #ff6b6b; /* Vermelho suave para erro */
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 /* Reset de base pour uniformiser les styles */
@@ -289,6 +416,7 @@ h3 {
   max-width: 400px;
   border-radius: 15px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .projet-description {
@@ -325,9 +453,11 @@ h3 {
 .btn:hover {
   background-color: var(--color-jeune);
   color: var(--color-violet);
-  transform: scale(1.05);
-  /* Zoom leve para interatividade */
+  transform: scale(1.05);  /* Zoom leve para interatividade */
 }
+
+.projet-item img:hover {
+   transform: scale(1.1); }
 
 /* Section Expériences */
 .section-experiences {
