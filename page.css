@@ -318,15 +318,23 @@ section h2 {
 }
 
 /* Section Compétences */
-.section-competences,
-.competences-list {
+/* .section-competences {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0px 0;
+  padding: 20%;
   scroll-margin-top: 200px;
-}
+} */
+
+.list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  scroll-margin-top: 200px;
+} 
 
 .competence-item {
   background-color: var(--color-light-violet);
