@@ -176,12 +176,6 @@ p {
   padding: 10px;
 }
 
-/* Conteneur centralisé avec espacement */
-.container {
-  max-width: 960px;
-  margin: 0px auto;
-  padding: 0 20px;
-}
 
 /* Header - logo et menu de navigation */
 header {
@@ -223,7 +217,6 @@ nav ul li a {
   padding: 15px 10px;
   text-decoration: none;
   color: var(--color-light-lilas);
-  background-color: var(--color-light-violet);
   transition: background-color 0.3s;
 }
 
@@ -260,9 +253,8 @@ section h2 {
 .section-accueil {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 30px;
-  flex-wrap: wrap;
   scroll-margin-top: 380px;
 }
 
@@ -294,7 +286,7 @@ section h2 {
   gap: 30px;
   flex-wrap: wrap;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
   scroll-margin-top: 200px;
 }
 
@@ -396,16 +388,13 @@ h3 {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px;
   scroll-margin-top: 200px;
 }
 
 .projet-item {
-  display: flex;
+  display: grid;
   gap: 15px;
-  margin-bottom: 40px;
-  flex-wrap: nowrap;
-  align-items: center;
   background-color: var(--color-light-violet);
   border-radius: 15px;
   padding: 15px;
