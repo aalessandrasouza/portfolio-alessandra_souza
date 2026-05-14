@@ -1,7 +1,7 @@
 /* Variables CSS pour les couleurs et styles principaux */
 :root {
   /* Couleur du fond principal */
-  --color-violet: #431C53;
+  --color-violet: #481b5a;
 
   /* Couleur du fond secondaire */
   --color-light-violet: #493178;
@@ -176,6 +176,13 @@ p {
   padding: 10px;
 }
 
+/* Conteneur centralisé avec espacement */
+.container {
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 0 20px;
+}
+
 
 /* Header - logo et menu de navigation */
 header {
@@ -210,6 +217,7 @@ nav ul {
   margin-left: 0;
   padding: 0;
   display: flex;
+   background-color: var(--color-light-violet);
 }
 
 nav ul li a {
@@ -253,8 +261,9 @@ section h2 {
 .section-accueil {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 30px;
+  flex-wrap: wrap;
   scroll-margin-top: 380px;
 }
 
@@ -401,8 +410,11 @@ h3 {
 }
 
 .projet-item {
-  display: grid;
+  display: flex;
   gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  align-items: center;
   background-color: var(--color-light-violet);
   border-radius: 15px;
   padding: 15px;
