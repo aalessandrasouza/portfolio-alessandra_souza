@@ -8,22 +8,23 @@
   <link rel="stylesheet" href="page.css" />
 </head>
 
-
 <body>
-  <!-- En-tête du site avec navigation -->
+
+  <!-- En-tête du site -->
   <header>
-    <div class="container header-content">
+    <div class="container navbar">
       <h1>Alessandra Souza.</h1>
+
       <button class="hamburger" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-
       </button>
+
       <nav>
         <ul>
           <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#apropos">À&nbsp;propos</a></li> <!-- Espace insécable pour éviter la coupure -->
+          <li><a href="#apropos">À&nbsp;propos</a></li>
           <li><a href="#competences">Compétences</a></li>
           <li><a href="#projets">Projets</a></li>
           <li><a href="#experiences">Expériences</a></li>
@@ -34,488 +35,683 @@
     </div>
   </header>
 
-  <!-- Contenu principal du site -->
-  <main>
-    <!-- Section d'accueil : présentation personnelle -->
-    <section id="accueil" class="container section-accueil">
-      <div class="intro-text">
+  <!-- Section d'accueil (HERO) : hors du main pour respecter la sémantique -->
+  <section id="accueil" class="section-accueil">
+    <div class="accueil-container">
+
+      <div class="accueil-texte">
+        <h2 class="visually-hidden">Présentation</h2> <!-- accessibilité -->
+
         <h1>Salut, je suis Alessandra</h1>
-        <p><strong>DÉVELOPPEUSE Full Stack</strong></p>
-        <p>Étudiante en informatique à l’Université Grenoble Alpes, je recherche un <strong>alternance</strong> en
-          développement
-          web. </p>
-      </div>
-      <div class="intro-img">
-        <img src="./img/photo.png" alt="Photo de Alessandra assise avec un laptop" />
-      </div>
-    </section>
 
-    <!-- Section à propos : biographie et intérêts -->
-    <section id="apropos" class="container section-apropos">
-     
-      <div class="apropos-img">
-         <h1>À propos</h1>
-        <img src="img/photo2.png" alt="Photo de Alessandra debout en costume" />
-      </div>
-      <div class="apropos-text">
-        
-        <p>Bonjour, je m’appelle Alessandra Souza, étudiante en BUT Informatique à l’Université Grenoble Alpes. Après
-          plusieurs années à enseigner les mathématiques et la robotique au Brésil. J’y ai surtout appris une chose
-          essentielle : avec les bons outils et un peu de patience, on peut vraiment faire la différence.
-          J’ai développé un goût prononcé pour la résolution de problèmes, la pédagogie et les projets concrets qui ont
-          du sens, surtout lorsqu’ils aident les autres à progresser. </p>
-        <p>Aujourd’hui, j’ai des bases en Python, HTML, CSS, PHP, SQL et Java, et j’ai réalisé quelques
-          projets comme des sites web ou de petites applications. Je construis actuellement ce portfolio dans le cadre
-          d’un projet universitaire, un espace qui évolue en même temps que mes compétences.</p>
-        <p>En dehors de l’informatique, j’aime bouger et explorer : voyager, faire des randonnées, de la musculation,
-          du crossfit, et passer du temps avec les personnes qui comptent pour moi.
+        <div class="intro">
+          <p class="role"><strong>DÉVELOPPEUSE FULL STACK</strong></p>
 
-          Si vous êtes arrivé·e jusqu’ici, merci de prendre le temps de découvrir mon parcours.</p>
-      </div>
-
-    </section>
-
-    <!-- Section compétences : liste des compétences techniques et soft skills -->
-    <section id="competences" class="container section-competences">
-      <h1>Compétences</h1>
-
-      <div class="list">
-        <article id="developpement" class="competence-item">
-          <img class="icon" src="icon/dev.png" alt="Icône programmation" />
-          <h2>Développement Web</h2>
-          <ul>
-            <li><a href="#site_clinique"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-              <span class="icon-name">HTML</span>
-            </li>
-            <li><a href="#portfolio"><img class="icon" src="icon/css.png" alt="Icône CSS"></a>
-              <span class="icon-name">CSS</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/javascript.png" alt="Icône Java"></a>
-              <span class="icon-name">JavaScript</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/java.png" alt="Icône Java"></a>
-              <span class="icon-name">Java</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/php.png" alt="Icône PHP"></a>
-              <span class="icon-name">PHP</span>
-            </li>
-            <li><a href="#simulateur-bancaire"><img class="icon" src="icon/python.png" alt="Icône Python"></a>
-              <span class="icon-name">Python</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/sql.png" alt="Icône SQL"></a>
-              <span class="icon-name">SQL</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/c.png" alt="Icône C"></a>
-              <span class="icon-name">C</span>
-            </li>
-          </ul>
-        </article>
-
-        <article id="software" class="competence-item">
-          <img class="icon" src="icon/software.png" alt="Icône software et outils" />
-          <h2>Logiciels et outils</h2>
-          <ul>
-            <li><a href="#simulateur-bancaire"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-              <span class="icon-name">GitHub</span>
-            </li>
-            <li><a href="#simulateur-bancaire"><img class="icon" src="icon/vscode.png" alt="Icône VS Code"></a>
-              <span class="icon-name">VS Code</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/inteliji.png" alt="Icône IntelliJ"></a>
-              <span class="icon-name">IntelliJ IDEA</span>
-            </li>
-            <li><a href="#"><img class="icon" src="icon/canva.png" alt="Icône Canva"></a>
-              <span class="icon-name">Canva</span>
-            </li>
-            <li><a href="#"><img class="icon" src="icon/figma.png" alt="Icône Figma"></a>
-              <span class="icon-name">Figma</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/draw.png" alt="Icône Draw.io"></a>
-              <span class="icon-name">Draw.io</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/latex.png" alt="Icône LaTeX"></a>
-              <span class="icon-name">LaTeX</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/matlab.png" alt="Icône MATLAB"></a>
-              <span class="icon-name">MATLAB</span>
-            </li>
-            <li><a href="#formations"><img class="icon" src="icon/logarithm.png" alt="Icône GeoGebra"></a>
-              <span class="icon-name">GeoGebra</span>
-            </li>
-          </ul>
-        </article>
-
-        <article id="robotique" class="competence-item">
-          <img class="icon" src="icon/robot.png" alt="Icône robotique" />
-          <h2>Robotique</h2>
-          <ul>
-            <li><a href="#robotique-educative"><img class="icon" src="icon/scratch.png" alt="Icône Scratch"></a>
-              <span class="icon-name">Scratch</span>
-            </li>
-            <li><a href="#robotique-educative"><img class="icon" src="icon/arduino.png" alt="Icône Arduino"></a>
-              <span class="icon-name">Arduino</span>
-            </li>
-            <li><a href="#robotique-educative"><img class="icon" src="icon/lego.png" alt="Icône LEGO Mindstorms"></a>
-              <span class="icon-name">LEGO Mindstorms</span>
-            </li>
-          </ul>
-        </article>
-
-        <article id="langues" class="competence-item">
-          <img class="icon" src="icon/langue.png" alt="Icône langues" />
-          <h2>Langues</h2>
-          <ul>
-            <li><a href="#experiences"><img class="icon" src="icon/brasil.png" alt="Drapeau Brésil"></a>
-              <span class="icon-name">Langue maternelle</span>
-            </li>
-            <li><a href="#experiences"><img class="icon" src="icon/franca.png" alt="Drapeau France"></a>
-              <span class="icon-name">B2/C1 en cours</span>
-            </li>
-            <li><a href="#experiences"><img class="icon" src="icon/reino-unido.png" alt="Drapeau Royaume-Uni"></a>
-              <span class="icon-name">B1/B2 en cours</span>
-            </li>
-            <li><a href="#experiences"><img class="icon" src="icon/espanha.png" alt="Drapeau Espagne"></a>
-              <span class="icon-name">A1/A2 en cours</span>
-            </li>
-          </ul>
-        </article>
-
-        <article id="softskills" class="competence-item">
-          <img class="icon" src="icon/softskills.png" alt="Icône soft skills" />
-          <h2>Soft Skills</h2>
-          <ul>
-            <li>Curiosité</li>
-            <li>Créativité</li>
-            <li>Autonomie</li>
-            <li>Rigueur</li>
-            <li>Adaptabilité</li>
-            <li>Pédagogie</li>
-            <li>Communication</li>
-            <li>Écoute active</li>
-            <li>Travail en équipe</li>
-            <li>Gestion du temps</li>
-            <li>Prise d'initiative</li>
-            <li>Sens de l'organisation</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Section projets : présentation des projets réalisés -->
-    <section id="projets" class="container section-projets">
-      <h1>Projets</h1>
-<div class="list">
-      <article id="landing-page-css" class="projet-item">
-        <div class="project-img">
-          <img src="img/landing-page-css1.png" alt="Capture d'écran de la landing page CSS" />
+          <p class="description">
+            Étudiante en 3ᵉ année de BUT Informatique à l’IUT2 Grenoble, je recherche une alternance
+            en développement web dès septembre 2026 (rythme: 1 semaine entreprise / 1 semaine école).
+            Expérience en Symfony, PHP, JavaScript, HTML, CSS et Bootstrap. Motivée par une progression
+            à long terme et la poursuite vers un master.
+          </p>
         </div>
-        <div class="projet-description">
-          <h2>Landing Page - Trilha CSS DIO</h2>
-          <p>Projet réalisé dans le cadre de la formation Digital Innovation One (DIO), cette landing page m’a permis
-            d’approfondir mes connaissances en CSS avancé, notamment les dégradés de texte, Flexbox, et le design
-            responsive tout en respectant l’accessibilité et la sémantique HTML5.</p>
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-            <a href="#developpement"><img class="icon" src="icon/css.png" alt="Icône CSS"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-            <a href="#developpement"><img class="icon" src="icon/figma.png" alt="Icône Figma"></a>
-            <a href="#developpement"><img class="icon" src="icon/vscode.png" alt="Icône VS Code"></a>
-          </div>
+      </div>
+
+      <div class="accueil-image">
+        <img src="./img/photo.png" alt="Photo de Alessandra assise avec un laptop">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Section à propos : biographie et intérêts -->
+<section id="apropos" class="section-apropos">
+
+  <div class="apropos-container">
+
+    <div class="apropos-img">
+      <img src="img/photo2.png" alt="Photo de Alessandra debout en costume" />
+    </div>
+
+    <div class="apropos-text">
+      <h2>À propos</h2>
+
+      <p>Bonjour, je m’appelle Alessandra Souza, étudiante en BUT Informatique à l’Université Grenoble Alpes. Après
+        plusieurs années à enseigner les mathématiques et la robotique au Brésil, j’y ai appris une chose essentielle :
+        avec les bons outils et un peu de patience, on peut vraiment faire la différence.</p>
+
+      <p>J’ai développé un goût prononcé pour la résolution de problèmes, la pédagogie et les projets concrets qui ont
+        du sens, surtout lorsqu’ils aident les autres à progresser.</p>
+
+      <p>Aujourd’hui, j’ai des bases en Python, HTML, CSS, PHP, SQL et Java, et j’ai réalisé quelques projets comme des
+        sites web ou de petites applications. Je construis actuellement ce portfolio dans le cadre d’un projet
+        universitaire.</p>
+
+      <p>En dehors de l’informatique, j’aime voyager, faire des randonnées, de la musculation, du crossfit, et passer du
+        temps avec les personnes qui comptent pour moi.</p>
+    </div>
+  </div>
+
+  <!-- Nouveaux blocs d’intérêts -->
+  <div class="interets-container">
+
+    <div class="interet-bloc">
+      <h3>🌍 Voyages & cultures</h3>
+      <p>J’adore découvrir de nouveaux pays, apprendre des langues et comprendre comment les gens vivent ailleurs. Cela
+        nourrit ma créativité et ma curiosité.</p>
+    </div>
+
+    <div class="interet-bloc">
+      <h3>🤖 Robotique & pédagogie</h3>
+      <p>J’ai enseigné la robotique éducative avec Arduino et LEGO Mindstorms. J’aime créer des activités ludiques qui
+        rendent l’apprentissage concret et motivant.</p>
+    </div>
+
+    <div class="interet-bloc">
+      <h3>🏋️ Sport & bien‑être</h3>
+      <p>Musculation, crossfit, randonnées… Le mouvement fait partie de mon équilibre. Il m’aide à rester disciplinée,
+        concentrée et motivée.</p>
+    </div>
+
+    <div class="interet-bloc">
+      <h3>💡 Créativité & projets</h3>
+      <p>J’aime imaginer, concevoir et structurer des projets — qu’ils soient techniques, pédagogiques ou personnels.
+        J’apprends constamment de nouvelles choses.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- Compétences -->
+  <section id="competences" class="section-competences">
+
+  <div class="competences-header">
+    <h2>Compétences</h2>
+    <p class="competences-subtitle">Mes compétences techniques, outils, langues et qualités professionnelles</p>
+  </div>
+
+  <div class="competences-grid">
+
+    <!-- Développement Web -->
+    <article class="competence-card" id="developpement">
+      <div class="card-header">
+        <img src="icon/dev.png" alt="Icône programmation">
+        <h3>Développement Web</h3>
+      </div>
+
+      <ul class="skills-list">
+        <li>
+          <a href="#site_clinique">
+            <img src="icon/html.png" alt="Icône HTML">
+          </a>
+          <span>HTML</span>
+        </li>
+        <li>
+          <a href="#portfolio">
+            <img src="icon/css.png" alt="Icône CSS">
+          </a>
+          <span>CSS</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/javascript.png" alt="Icône JavaScript">
+          </a>
+          <span>JavaScript</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/java.png" alt="Icône Java">
+          </a>
+          <span>Java</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/php.png" alt="Icône PHP">
+          </a>
+          <span>PHP</span>
+        </li>
+        <li>
+          <a href="#simulateur-bancaire">
+            <img src="icon/python.png" alt="Icône Python">
+          </a>
+          <span>Python</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/sql.png" alt="Icône SQL">
+          </a>
+          <span>SQL</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/c.png" alt="Icône C">
+          </a>
+          <span>C</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Logiciels et outils -->
+    <article class="competence-card" id="software">
+      <div class="card-header">
+        <img src="icon/software.png" alt="Icône logiciels et outils">
+        <h3>Logiciels & Outils</h3>
+      </div>
+
+      <ul class="skills-list">
+        <li>
+          <a href="#simulateur-bancaire">
+            <img src="icon/githuboff.png" alt="Icône GitHub">
+          </a>
+          <span>GitHub</span>
+        </li>
+        <li>
+          <a href="#simulateur-bancaire">
+            <img src="icon/vscode.png" alt="Icône VS Code">
+          </a>
+          <span>VS Code</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/inteliji.png" alt="Icône IntelliJ">
+          </a>
+          <span>IntelliJ IDEA</span>
+        </li>
+        <li>
+          <a href="#">
+            <img src="icon/canva.png" alt="Icône Canva">
+          </a>
+          <span>Canva</span>
+        </li>
+        <li>
+          <a href="#">
+            <img src="icon/figma.png" alt="Icône Figma">
+          </a>
+          <span>Figma</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/draw.png" alt="Icône Draw.io">
+          </a>
+          <span>Draw.io</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/latex.png" alt="Icône LaTeX">
+          </a>
+          <span>LaTeX</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/matlab.png" alt="Icône MATLAB">
+          </a>
+          <span>MATLAB</span>
+        </li>
+        <li>
+          <a href="#formations">
+            <img src="icon/logarithm.png" alt="Icône GeoGebra">
+          </a>
+          <span>GeoGebra</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Robotique -->
+    <article class="competence-card" id="robotique">
+      <div class="card-header">
+        <img src="icon/robot.png" alt="Icône robotique">
+        <h3>Robotique</h3>
+      </div>
+
+      <ul class="skills-list">
+        <li>
+          <a href="#robotique-educative">
+            <img src="icon/scratch.png" alt="Icône Scratch">
+          </a>
+          <span>Scratch</span>
+        </li>
+        <li>
+          <a href="#robotique-educative">
+            <img src="icon/arduino.png" alt="Icône Arduino">
+          </a>
+          <span>Arduino</span>
+        </li>
+        <li>
+          <a href="#robotique-educative">
+            <img src="icon/lego.png" alt="Icône LEGO Mindstorms">
+          </a>
+          <span>LEGO Mindstorms</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Langues -->
+    <article class="competence-card" id="langues">
+      <div class="card-header">
+        <img src="icon/langue.png" alt="Icône langues">
+        <h3>Langues</h3>
+      </div>
+
+      <ul class="skills-list">
+        <li>
+          <a href="#experiences">
+            <img src="icon/brasil.png" alt="Drapeau Brésil">
+          </a>
+          <span>Langue maternelle</span>
+        </li>
+        <li>
+          <a href="#experiences">
+            <img src="icon/franca.png" alt="Drapeau France">
+          </a>
+          <span>Français — B2/C1 en cours</span>
+        </li>
+        <li>
+          <a href="#experiences">
+            <img src="icon/reino-unido.png" alt="Drapeau Royaume-Uni">
+          </a>
+          <span>Anglais — B1/B2 en cours</span>
+        </li>
+        <li>
+          <a href="#experiences">
+            <img src="icon/espanha.png" alt="Drapeau Espagne">
+          </a>
+          <span>Espagnol — A1/A2 en cours</span>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Soft Skills -->
+    <article class="competence-card" id="softskills">
+      <div class="card-header">
+        <img src="icon/softskills.png" alt="Icône soft skills">
+        <h3>Soft Skills</h3>
+      </div>
+
+      <ul class="skills-list soft">
+        <li>Curiosité</li>
+        <li>Créativité</li>
+        <li>Autonomie</li>
+        <li>Rigueur</li>
+        <li>Adaptabilité</li>
+        <li>Pédagogie</li>
+        <li>Communication</li>
+        <li>Écoute active</li>
+        <li>Travail en équipe</li>
+        <li>Gestion du temps</li>
+        <li>Prise d’initiative</li>
+        <li>Sens de l’organisation</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+
+
+    <!-- Projets -->
+   <section id="projets" class="section-projets">
+
+  <div class="projets-header">
+    <h2>Projets</h2>
+  </div>
+
+  <div class="projets-grid">
+
+    <!-- Projet 1 -->
+    <article class="projet-card" id="landing-page-css">
+      <div class="projet-img">
+        <img src="img/landing-page-css1.png" alt="Capture d'écran de la landing page CSS">
+      </div>
+
+      <div class="projet-content">
+        <h3>Landing Page - Trilha CSS DIO</h3>
+        <p>
+          Projet réalisé dans le cadre de la formation Digital Innovation One (DIO), cette landing page m’a permis
+          d’approfondir mes connaissances en CSS avancé, notamment les dégradés de texte, Flexbox, et le design
+          responsive tout en respectant l’accessibilité et la sémantique HTML5.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#developpement"><img src="icon/html.png" alt="Icône HTML"></a>
+          <a href="#developpement"><img src="icon/css.png" alt="Icône CSS"></a>
+          <a href="#developpement"><img src="icon/githuboff.png" alt="Icône GitHub"></a>
+          <a href="#developpement"><img src="icon/figma.png" alt="Icône Figma"></a>
+          <a href="#developpement"><img src="icon/vscode.png" alt="Icône VS Code"></a>
+        </div>
+
+        <div class="projet-buttons">
           <a href="projets/landing-page-css.html" class="btn">Voir le projet</a>
           <a href="https://aalessandrasouza.github.io/Landing_Page/" target="_blank" class="btn">Demo</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article id="portfolio" class="projet-item">
-        <div class="project-img">
-          <img src="img/portfolio.png" alt="Capture d'écran du portfolio" />
+    <!-- Projet 2 -->
+    <article class="projet-card" id="portfolio">
+      <div class="projet-img">
+        <img src="img/portfolio.png" alt="Capture d'écran du portfolio">
+      </div>
+
+      <div class="projet-content">
+        <h3>Portfolio web - Alessandra Souza</h3>
+        <p>
+          Ce projet consiste en la création de mon portfolio web dans le cadre de la SAE. Il a pour objectif de
+          valoriser mes compétences en conception web, en programmation et en gestion de projet, et sera
+          progressivement enrichi au fil de l’acquisition de nouvelles technologies.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#developpement"><img src="icon/html.png" alt="Icône HTML"></a>
+          <a href="#developpement"><img src="icon/css.png" alt="Icône CSS"></a>
+          <a href="#developpement"><img src="icon/javascript.png" alt="Icône JavaScript"></a>
+          <a href="#developpement"><img src="icon/githuboff.png" alt="Icône GitHub"></a>
+          <a href="#developpement"><img src="icon/canva.png" alt="Icône Canva"></a>
         </div>
-        <div class="projet-description">
-          <h2>Portfolio web - Alessandra Souza</h2>
-          <p>Ce projet consiste en la création de mon portfolio web dans le cadre de la SAE. Il a pour objectif de
-            valoriser mes compétences en conception web, en programmation et en gestion de projet, et sera
-            progressivement enrichi au fil de l’acquisition de nouvelles technologies.</p>
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-            <a href="#developpement"><img class="icon" src="icon/css.png" alt="Icône CSS"></a>
-            <a href="#developpement"><img class="icon" src="icon/javascript.png" alt="Icône JavaScript"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-            <a href="#developpement"><img class="icon" src="icon/canva.png" alt="Icône Canva"></a>
-          </div>
+
+        <div class="projet-buttons">
           <a href="projets/portfolio.html" class="btn">Voir le projet</a>
           <a href="https://aalessandrasouza.github.io/portfolio-alessandra_souza/" target="_blank" class="btn">Demo</a>
         </div>
-      </article>
+      </div>
+    </article>
+
+    <!-- Projet 3 -->
+    <article class="projet-card" id="discord">
+      <div class="projet-img">
+        <img src="img/discord1.png" alt="Recréation de la page Discord">
+      </div>
+
+      <div class="projet-content">
+        <h3>Recréation du site Discord</h3>
+        <p>
+          Ce projet consiste à reproduire une page inspirée de la plateforme Discord, en utilisant uniquement HTML et
+          CSS. L’objectif était de créer une interface responsive, sémantique et fidèle aux concepts visuels de Discord.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#developpement"><img src="icon/html.png" alt="Icône HTML"></a>
+          <a href="#developpement"><img src="icon/css.png" alt="Icône CSS"></a>
+          <a href="#developpement"><img src="icon/githuboff.png" alt="Icône GitHub"></a>
+          <a href="#developpement"><img src="icon/figma.png" alt="Icône Figma"></a>
+        </div>
+
+        <div class="projet-buttons">
+          <a href="projets/discord-page-responsive.html" class="btn">Voir le projet</a>
+          <a href="https://aalessandrasouza.github.io/discord-page-responsive/" target="_blank" class="btn">Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet 4 -->
+    <article class="projet-card" id="youtube-clone">
+      <div class="projet-img">
+        <img src="img/youtube2.png" alt="Page YouTube responsive recréée">
+      </div>
+
+      <div class="projet-content">
+        <h3>YouTube Clone</h3>
+        <p>
+          Ce projet regroupe deux mini‑projets front‑end : la recréation d’une page de liste de vidéos inspirée de
+          YouTube et la reproduction d’une page de lecture vidéo. L’objectif était de maîtriser HTML, CSS moderne et
+          responsive design.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#developpement"><img src="icon/html.png" alt="Icône HTML"></a>
+          <a href="#developpement"><img src="icon/css.png" alt="Icône CSS"></a>
+          <a href="#developpement"><img src="icon/figma.png" alt="Icône Figma"></a>
+          <a href="#developpement"><img src="icon/githuboff.png" alt="Icône GitHub"></a>
+        </div>
+
+        <div class="projet-buttons">
+          <a href="projets/youtube-clone.html" class="btn">Voir le projet</a>
+          <a href="https://aalessandrasouza.github.io/youtube-clone/" target="_blank" class="btn">Demo 1</a>
+          <a href="https://aalessandrasouza.github.io/youtube-com-grid-layout/" target="_blank" class="btn">Demo 2</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet 5 -->
+    <article class="projet-card" id="simulateur-bancaire">
+      <div class="projet-img">
+        <img src="img/compte.png" alt="Capture d'écran du simulateur de compte bancaire">
+      </div>
+
+      <div class="projet-content">
+        <h3>Simulateur de Compte Bancaire</h3>
+        <p>
+          Un système simple de gestion de dépôts, retraits et solde, développé dans le cadre d’un projet personnel
+          d’apprentissage en Python.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#developpement"><img src="icon/python.png" alt="Icône Python"></a>
+          <a href="#developpement"><img src="icon/githuboff.png" alt="Icône GitHub"></a>
+        </div>
+
+        <div class="projet-buttons">
+          <a href="projets/simulateur-bancaire.html" class="btn">Voir le projet</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Projet 6 -->
+    <article class="projet-card" id="robotique-educative">
+      <div class="projet-img">
+        <img src="img/smars.png" alt="Photo du robot SMARS">
+      </div>
+
+      <div class="projet-content">
+        <h3>Robotique éducative</h3>
+        <p>
+          Projet de fin d’études portant sur la conception d’un robot pédagogique à faible coût, combinant Arduino et
+          impression 3D.
+        </p>
+
+        <div class="projet-icons">
+          <a href="#robotique"><img src="icon/arduino.png" alt="Icône Arduino"></a>
+          <a href="#robotique"><img src="icon/scratch.png" alt="Icône Scratch"></a>
+          <a href="#robotique"><img src="icon/lego.png" alt="Icône LEGO Mindstorms"></a>
+        </div>
+
+        <div class="projet-buttons">
+          <a href="projets/robotique-educative.html" class="btn">Voir le projet</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- Expériences -->
+<section id="experiences" class="section-experiences">
+
+  <h2>Expériences</h2>
+
+  <div class="experiences-grid">
+
+    <!-- Expérience 1 -->
+    <article class="experience-card">
+      <img src="icon/enseignement.png" alt="Icône professeur particulier" class="experience-icon">
+
+      <div class="experience-info">
+        <h3>Professeure de Mathématiques particulier</h3>
+        <span class="experience-location">Remote, Brésil</span>
+        <span class="experience-date">08/2023 - actuel</span>
+
+        <ul>
+          <li>Cours de Mathématiques personnalisés, en adaptant le contenu aux besoins de chaque élève, en présentiel et en ligne.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Expérience 2 -->
+    <article class="experience-card">
+      <img src="icon/teacher.png" alt="Icône professeure" class="experience-icon">
+
+      <div class="experience-info">
+        <h3>Professeure de Mathématiques</h3>
+        <span class="experience-location">Colégio Militar da Polícia Federal de Goiás, Brésil</span>
+        <span class="experience-date">02/2020 - 08/2023</span>
+
+        <ul>
+          <li>Conception et enseignement de mathématiques.</li>
+          <li>Création de projets interactifs et évaluation des progrès en programmation et modélisation.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Expérience 3 -->
+    <article class="experience-card">
+      <img src="icon/robotic.png" alt="Icône robotique" class="experience-icon">
+
+      <div class="experience-info">
+        <h3>Professeure de Robotique</h3>
+        <span class="experience-location">Instituto Joao Margon Vaz, Brésil</span>
+        <span class="experience-date">02/2018 - 12/2020</span>
+
+        <ul>
+          <li>Développement de cours intégrant mathématiques et robotique.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+
+    <!-- Formations -->
+    <section id="formations" class="section-formations">
+
+  <h2>Formations</h2>
+
+  <div class="timeline">
+
+    <!-- Formation 1 -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2025 - 2026</div>
+
+      <div class="timeline-content">
+        <h3>BUT Informatique</h3>
+        <span>Université Grenoble Alpes, France</span>
+        <p>Parcours Réalisation d'Applications : Conception, Développement, Validation.</p>
+      </div>
+    </div>
+
+    <!-- Formation 2 -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2021 - 2023</div>
+
+      <div class="timeline-content">
+        <h3>Master en Mathématiques</h3>
+        <span>Université Fédérale de Goiàs, Brésil</span>
+        <p>Parcours recherche en Systèmes Dynamiques.</p>
+      </div>
+    </div>
+
+    <!-- Formation 3 -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2016 - 2020</div>
+
+      <div class="timeline-content">
+        <h3>Licence en Mathématiques</h3>
+        <span>Université Fédérale de Goiàs, Brésil</span>
+        <p>Parcours enseignement de Mathématiques.</p>
+      </div>
+    </div>
+
+    <!-- Formation 4 -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2011 - 2014</div>
+
+      <div class="timeline-content">
+        <h3>Bac Général</h3>
+        <span>Centre Educacional São Francisco, Brésil</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section-contact">
+
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+
+    <!-- FORMULAIRE -->
+    <form action="https://formspree.io/f/mwvkqzrn" method="post" class="contact-form">
+
+      <div class="form-row">
+        <input type="text" id="nom" name="nom" placeholder="Nom*" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Prénom*" required>
+        <input type="email" id="email" name="email" placeholder="E-mail*" required>
+      </div>
+
+      <div class="form-row">
+        <select id="sujet" name="sujet" required>
+          <option value="" disabled selected>Sujet</option>
+          <option value="projet">Projet</option>
+          <option value="emploi">Emploi</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <textarea id="message" name="message" placeholder="Message*" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-contact">Envoyer</button>
+    </form>
+
+    <!-- ICÔNES -->
+    <div class="contact-icons">
+      <a href="https://linkedin.com/in/alesouza" target="_blank" aria-label="Linkedin">
+        <img src="icon/linkedin.png" alt="Icône Linkedin">
+      </a>
+
+      <a href="https://github.com/aalessandrasouza" target="_blank" aria-label="GitHub">
+        <img src="icon/github.png" alt="Icône GitHub">
+      </a>
+
+      <a href="mailto:alessandra.souza@etu.univ-grenoble-alpes.fr" aria-label="Envoyer un email">
+        <img src="icon/email.png" alt="Icône email">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <!-- Footer -->
+  </footer>
+
+</body>
+</html>
 
 
   
 
-      <article id="discord" class="projet-item">
-        <div class="project-img">
-          <img src="img/discord1.png" alt="Recréation de la page Discord" />
-        </div>
+   
 
-        <div class="projet-description">
-          <h2> Recréation du site Discord</h2>
-
-          <p>
-            Ce projet consiste à reproduire une page inspirée de la plateforme Discord, en utilisant uniquement HTML et
-            CSS.
-            L’objectif était de créer une interface responsive, sémantique et fidèle aux concepts visuels de Discord,
-            tout en
-            respectant les bonnes pratiques de développement web.
-          </p>
-
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-            <a href="#developpement"><img class="icon" src="icon/css.png" alt="Icône CSS"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-            <a href="#developpement"><img class="icon" src="icon/figma.png" alt="Icône Figma"></a>
-          </div>
-
-          <a href="projets/discord-page-responsive.html" class="btn">Voir le projet</a>
-          <a href="https://aalessandrasouza.github.io/discord-page-responsive/" target="_blank" class="btn">Demo</a>
-        </div>
-        
-      </article>
-
-      <article id="youtube-clone" class="projet-item">
-        <div class="project-img">
-          <img src="img/youtube2.png" alt="Page YouTube responsive recréée" />
-        </div>
-
-        <div class="projet-description">
-          <h2>YouTube Clone</h2>
-
-          <p>
-            Ce projet regroupe deux mini‑projets front‑end : la recréation d’une page de liste de vidéos inspirée de
-            YouTube
-            et la reproduction d’une page de lecture vidéo. L’objectif était de maîtriser le HTML sémantique, le CSS
-            moderne
-            (Grid et Flexbox) et le responsive design à travers une interface fidèle à l’expérience YouTube.
-          </p>
-
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-            <a href="#developpement"><img class="icon" src="icon/css.png" alt="Icône CSS"></a>
-            <a href="#developpement"><img class="icon" src="icon/figma.png" alt="Icône Figma"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-          </div>
-
-          <a href="projets/youtube-clone.html" class="btn">Voir le projet</a>
-          <a href="https://aalessandrasouza.github.io/youtube-clone/" target="_blank" class="btn">Demo 1</a>
-          <a href="https://aalessandrasouza.github.io/youtube-com-grid-layout/" target="_blank" class="btn">Demo 2</a>
-
-        </div>
-      </article>
-
-
-      <!-- <article id="site_clinique" class="projet-item">
-        <div class="project-img">
-          <img src="img/site_clinique.png" alt="Capture d'écran du site web de la clinique vétérinaire" />
-        </div>
-        <div class="projet-description">
-          <h2>Site Web Clinique Vétérinaire</h2>
-          <p>Un site responsive conçu dans le cadre d’un projet personnel afin de renforcer mes compétences en HTML.
-            Réalisé en autonomie sur une semaine, ce projet m’a permis de structurer un code propre et une feuille de
-            style cohérente, tout en consolidant mes bases par une mise en pratique concrète.</p>
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/html.png" alt="Icône HTML"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-          </div>
-          <a href="projets/site_clinique.html" class="btn">Voir le projet</a>
-
-        </div>
-      </article> -->
-
-      <article id="simulateur-bancaire" class="projet-item simulateur-banque">
-        <div class="project-img">
-          <img src="img/compte.png" alt="Capture d'écran du simulateur de compte bancaire" />
-        </div>
-        <div class="projet-description">
-          <h2>Simulateur de Compte Bancaire</h2>
-          <p>Un système simple de gestion de dépôts, retraits et solde, développé dans le cadre d’un projet personnel
-            d’apprentissage en Python. Réalisé en autonomie sur une semaine, ce projet m’a permis de renforcer la
-            logique de programmation et d’aborder les bases de la gestion d’état dans une application.</p>
-          <div class="container-projet">
-            <a href="#developpement"><img class="icon" src="icon/python.png" alt="Icône Python"></a>
-            <a href="#developpement"><img class="icon" src="icon/githuboff.png" alt="Icône GitHub"></a>
-          </div>
-          <a href="projets/simulateur-bancaire.html" class="btn">Voir le projet</a>
-          <!-- <a href="https://github.com/aalessandrasouza/simulateur-de-compte-bancaire-en-python.git" target="_blank"
-            rel="noopener noreferrer" class="btn">Voir le code</a> -->
-        </div>
-      </article>
-
-
-
-      <article id="robotique-educative" class="projet-item robotique">
-        <div class="project-img">
-          <img src="img/smars.png" alt="Photo du robot SMARS" />
-        </div>
-        <div class="projet-description">
-          <h2>Robotique éducative</h2>
-          <p>Projet de fin d’études en licence de Mathématiques portant sur la conception d’un robot pédagogique à
-            faible coût, combinant Arduino et impression 3D. Réalisé en équipe de trois, le robot a été expérimenté en
-            classe lors d’activités de géométrie et d’algèbre auprès d’élèves du secondaire, alliant innovation
-            pédagogique et accessibilité technologique.</p>
-          <div class="container-projet">
-            <a href="#robotique"><img class="icon" src="icon/arduino.png" alt="Icône Arduino"></a>
-            <a href="#robotique"><img class="icon" src="icon/scratch.png" alt="Icône Scratch"></a>
-            <a href="#robotique"><img class="icon" src="icon/lego.png" alt="Icône LEGO Mindstorms"></a>
-          </div>
-          <a href="projets/robotique-educative.html" class="btn">Voir le projet</a>
-          <!-- <a href="https://files.cercomp.ufg.br/weby/up/506/o/anais_simmi_2018.pdf" target="_blank"
-            rel="noopener noreferrer" class="btn">Voir l'article</a> -->
-        </div>
-      </article>
-      </div>
-    </section>
-
-    <!-- Section expériences : parcours professionnel -->
-    <section id="experiences" class="container section-experiences">
-      <h1>Expériences</h1>
-
-      <article class="experience-item">
-        <div>
-          <img class="icon" src="icon/aupair.png" alt="Icône jeune fille au pair" />
-        </div>
-        <div>
-          <h3>Échange culturel - Jeune fille au pair</h3>
-          <span>AuPairWorld, France | 08/2023 - 08/2025</span>
-          <ul>
-            <li>Communication interculturelle, gestion du quotidien et accompagnement scolaire des enfants.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="experience-item">
-        <div>
-          <img class="icon" src="icon/enseignement.png" alt="Icône professeur particulier" />
-        </div>
-        <div>
-          <h3>Professeure de Mathématiques particulier</h3>
-          <span>Remote via Google Meet | 08/2023 - actuel</span>
-          <ul>
-            <li>Cours de Mathématiques personnalisés, en adaptant le contenu aux besoins de chaque élève, en présentiel
-              et en ligne.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="experience-item">
-        <div>
-          <img class="icon" src="icon/teacher.png" alt="Icône professeure" />
-        </div>
-        <div>
-          <h3>Professeure de Mathématiques</h3>
-          <span>Colégio Militar da Policia Federal de Goiàs, Brésil | 02/2021 - 08/2023</span>
-          <ul>
-            <li>Approche pédagogique basée sur la résolution de problèmes : amélioration des résultats de 35 % sur les
-              évaluations finales.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="experience-item">
-        <div>
-          <img class="icon" src="icon/robotic.png" alt="Icône professeure de robotique" />
-        </div>
-        <div>
-          <h3>Professeure de Robotique</h3>
-          <span>Instituto Joao Margon Vaz, Brésil | 02/2018 - 12/2020</span>
-          <ul>
-            <li>Conception de projets interactifs intégrant la robotique et la programmation, ayant amélioré
-              l’engagement de 40+ élèves en mathématiques.</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <!-- Section formations : parcours éducatif -->
-    <section id="formations" class="container section-formations">
-      <h1>Formations</h1>
-      <ul class="timeline" id="timeline">
-        <li class="li complete">
-          <div class="timestamp">
-            <!-- <img src="icon/but.png" alt="Icône Formation Informatique" /> -->
-            <h3>BUT Informatique</h3>
-            <span>Université Grenoble Alpes, France</span>
-            <p>Parcours Réalisation d'Applications : Conception, Développement, Validation.</p>
-          </div>
-          <div class="status">
-            <h2>2025 - 2026</h2>
-          </div>
-        </li>
-        <li class="li complete">
-          <div class="timestamp">
-            <!-- <img src="icon/master.png" alt="Icône Master maths" /> -->
-            <h3>Master en Mathématiques</h3>
-            <span class="text">Université Federale de Goiàs, Brésil</span>
-            <p>Parcours recherche en Systèmes Dynamiques</p>
-          </div>
-          <div class="status">
-            <h2>2021 - 2023</h2>
-          </div>
-        </li>
-        <li class="li complete">
-          <div class="timestamp">
-            <!-- <img src="icon/licence.png" alt="Icône Licence maths" /> -->
-            <h3>Licence en Mathématiques</h3>
-            <span class="text">Université Federale de Goiàs, Brésil</span>
-            <p>Parcours enseignement de Mathématiques</p>
-          </div>
-          <div class="status">
-            <h2>2016 - 2020</h2>
-          </div>
-        </li>
-        <li class="li complete">
-          <div class="timestamp">
-            <!-- <img src="icon/lycee.png" alt="Icône Baccalaureat" /> -->
-            <h3>Bac Général</h3>
-            <span class="text">Centre Educacional Sao Francisco, Brésil</span>
-          </div>
-          <div class="status">
-            <h2>2011 - 2014</h2>
-          </div>
-        </li>
-      </ul>
-    </section>
+   
+    
 
     <!-- Section contact : formulaire de contact et liens sociaux -->
-    <section id="contact" class="container section-contact">
-      <h1>Contact</h1>
-      <form action="https://formspree.io/f/mwvkqzrn" method="post">
-        <div class="form-row">
-          <input type="text" id="nom" name="nom" placeholder="Nom*" required />
-          <input type="text" id="prenom" name="prenom" placeholder="Prénom*" required />
-          <input type="email" id="email" name="email" placeholder="E-mail*" required />
-        </div>
-        <div class="form-row">
-          <select id="sujet" name="sujet" required>
-            <option value="" disabled selected>Sujet</option>
-            <option value="projet">Projet</option>
-            <option value="emploi">Emploi</option>
-            <option value="autre">Autre</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <textarea aria-label="Message" id="message" name="message" placeholder="Message*" required></textarea>
-        </div>
-        <button type="submit">Envoyer</button>
-      </form>
-      <div class="contact-icons">
-        <a href="https://linkedin.com/in/alesouza" target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
-          <img class="icon" src="icon/linkedin.png" alt="Icône Linkedin">
-        </a>
-        <a href="https://github.com/aalessandrasouza" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img class="icon" src="icon/github.png" alt="Icône GitHub">
-        </a>
-        <a href="mailto:alessandra.souza@etu.univ-grenoble-alpes.fr" aria-label="Envoyer un email">
-          <img class="icon" src="icon/email.png" alt="Icône email">
-        </a>
-      </div>
-    </section>
+    
   </main>
 
   <!-- Pied de page -->
