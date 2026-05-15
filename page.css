@@ -205,8 +205,8 @@ nav ul li a:hover {
 
 .section-apropos {
   padding: 100px 0;
-  background-color: #f7f5ff;
-  color: #1e1b29;
+  background-color:#1e1b29;
+  color: #f7f5ff;
 }
 
 /* Container principal */
@@ -258,10 +258,10 @@ nav ul li a:hover {
 }
 
 .interet-bloc {
-  background: #ffffff;
+  background: #1e1b29;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(245, 241, 241, 0.08);
 }
 
 .interet-bloc h3 {
