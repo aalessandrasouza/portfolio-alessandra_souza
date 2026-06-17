@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refonte du site Ubilink – Alessandra Souza</title>
+  <link rel="stylesheet" href="style-projets.css" />
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <h1>Alessandra Souza.</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-projet-detail">
+
+      <div class="projet-detail-header">
+        <h1> Refonte du site web Ubilink</h1>
+        <p class="projet-context">Stage professionnel · Ubilink, Meylan · avril – juillet 2026</p>
+      </div>
+
+      <div class="projet-detail-content">
+
+        <div class="projet-detail-img">
+          <img src="../img/ubilink.png" alt="Aperçu du site Ubilink refondu">
+        </div>
+
+        <div class="projet-detail-text">
+
+          <h2>Description</h2>
+          <p>
+            Dans le cadre de mon stage chez Ubilink, j'ai réalisé la refonte complète du site institutionnel
+            de l'entreprise ainsi que de trois sous-sites dédiés à ses solutions métiers : iBIM Events,
+            iBIM Industry et iBIM Real Estate.
+          </p>
+          <p>
+            L'objectif était de moderniser une interface existante présentant des limites structurelles
+            (hétérogénéité graphique, composants dupliqués, SVG non optimisés) et de mettre en place
+            une architecture modulaire, plus maintenable et cohérente visuellement entre les quatre sites.
+          </p>
+
+          <h3>Informations</h3>
+          <ul>
+            <li>Durée : 10 semaines (stage)</li>
+            <li>Personnes : travail individuel, en collaboration avec le tuteur Florian Darnand</li>
+            <li>Type : Projet professionnel – stage entreprise</li>
+            <li>Contexte : site déjà en production, évolution d'une base existante en PHP</li>
+          </ul>
+
+          <h3>Fonctionnalités</h3>
+          <ul>
+            <li>Architecture site mère + 3 sous-sites indépendants avec composants mutualisés (navbar, footer, scripts).</li>
+            <li>Charte graphique personnalisée par sous-site via variables CSS (<code>--theme-color</code>, <code>--light-color</code>).</li>
+            <li>Gestion de contenu multilingue (FR/EN) via fichiers JSON — textes séparés du code source.</li>
+            <li>Système de scaling responsif personnalisé en JavaScript : calcul d'un facteur de zoom (<code>--scale</code>) selon la largeur et l'orientation de l'écran, sans multiplication de media queries.</li>
+            <li>Animations SVG synchronisées au scroll : couleurs et dégradés animés via <code>animBackgroundSVG()</code>, tracés animés avec <code>stroke-dashoffset</code>.</li>
+            <li>Intégration des SVG en inline (via <code>include</code> PHP) pour permettre leur animation par CSS et JavaScript.</li>
+            <li>Détection du type d'appareil (desktop / laptop / mobile) ajoutée dynamiquement au <code>&lt;body&gt;</code>.</li>
+          </ul>
+
+          <h3>Aspects techniques</h3>
+          <ul>
+            <li>PHP natif avec architecture modulaire — inclusion dynamique des composants communs via la variable <code>$masterPath</code>.</li>
+            <li>HTML5, CSS3 avec variables CSS globales pour la gestion des thèmes.</li>
+            <li>JavaScript pour les interactions dynamiques (menus responsives, système de scaling, animations SVG au scroll).</li>
+            <li>Fichiers JSON comme moteur de contenu — lus côté serveur via <code>file_get_contents</code> et <code>json_decode</code>.</li>
+            <li>Maquettes conçues sur Figma, utilisées comme référence tout au long du développement.</li>
+            <li>Déploiement sur serveur Nginx/PHP existant de l'entreprise.</li>
+          </ul>
+
+          <h3>Difficultés rencontrées</h3>
+          <ul>
+            <li>Concevoir une architecture capable de gérer simultanément un site mère et trois sous-sites, tout en conservant une identité visuelle cohérente — résolu par des composants réutilisables et une utilisation intensive de variables CSS.</li>
+            <li>Garantir la stabilité de l'interface lors des redimensionnements avec le système de scaling personnalisé.</li>
+            <li>Assurer une expérience homogène sur desktop, tablette et mobile pour l'ensemble des quatre sites.</li>
+          </ul>
+
+          <div class="projet-technologies">
+            <img class="icon" src="../icon/html.png"        alt="HTML">
+            <img class="icon" src="../icon/css.png"         alt="CSS">
+            <img class="icon" src="../icon/javascript.png"  alt="JavaScript">
+            <img class="icon" src="../icon/php.png"         alt="PHP">
+            <img class="icon" src="../icon/figma.png"       alt="Figma">
+            <img class="icon" src="../icon/githuboff.png"   alt="GitHub">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="projet-buttons">
+        <a href="../index.html#projets" class="btn">Retour</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Alessandra Souza. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
