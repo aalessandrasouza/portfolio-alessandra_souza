@@ -3,43 +3,29 @@
    =========================== */
 
 :root {
-  --color-violet: #431C53;
-  --color-light-violet: #493178;
-  --color-jeune: #FFDE59;
-  --color-light-lilas: #ddd5ff;
-  --color-light-beige: #f8ebd5;
-  --color-orange: #FFA500;
+  /* Cores de fundo */
+  --color-bg-primary: #1e1b29;       /* fundo principal (hero, navbar, sections) */
+  --color-bg-card: #2a2638;          /* fundo dos cards, forms, timeline */
+  --color-bg-input: #3b3550;         /* fundo dos inputs do formulário */
+  --color-bg-divider: #3b3550;       /* bordas internas (projeto img border) */
 
-  /* Aliases semânticos → variáveis base */
-  --color-bg-primary: var(--color-violet);         /* fundo principal */
-  --color-bg-card: var(--color-light-violet);      /* fundo dos cards, forms, timeline */
-  --color-bg-input: var(--color-light-violet);     /* input */
-  --color-bg-divider: var(--color-light-violet);   /* bordas internas */
+  /* Cores de texto */
+  --color-text-primary: #ffffff;     /* texto principal */
+  --color-text-muted: #f7f5ff;       /* texto levemente suavizado */
 
-  --color-text-primary: var(--color-light-lilas);  /* texto principal */
-  --color-text-muted: var(--color-light-lilas);    /* texto suavizado */
-
-  --color-accent: var(--color-jeune);              /* amarelo principal */
-  --color-accent-hover: var(--color-orange);       /* laranja no hover */
-  --color-accent-nav: var(--color-light-beige);    /* destaque do menu */
+  /* Cores de destaque */
+  --color-accent: #ffca2c;           /* amarelo principal (botões, timeline, footer) */
+  --color-accent-hover: #ffd861;     /* amarelo hover */
+  --color-accent-nav: #c7b8ff;       /* destaque lilás do menu */
 
   /* Sombras */
-  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.4);
-  --shadow-interet: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-img: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.25);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.35);
+  --shadow-interet: 0 4px 12px rgba(245, 241, 241, 0.08);
+  --shadow-img: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 
-
-/* ===========================
-   RESET OVERFLOW
-   =========================== */
-
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
 /* ===========================
    NAVBAR
    =========================== */
