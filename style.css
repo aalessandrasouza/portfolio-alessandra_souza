@@ -238,10 +238,10 @@ nav ul li a:hover {
   gap: 50px;
 }
 
-.apropos-img img {
+/* .apropos-img img {
   width: 380px;
   max-width: 100%;
-}
+} */
 
 .apropos-text {
   max-width: 650px;
