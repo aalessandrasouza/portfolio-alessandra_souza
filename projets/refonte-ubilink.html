@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Refonte du site Ubilink – Alessandra Souza</title>
+  <title>Refonte du site Ubilink - Alessandra Souza</title>
   <link rel="stylesheet" href="style-projets.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
 
       <div class="projet-detail-header">
         <h1> Refonte du site web Ubilink</h1>
-        <p class="projet-context">Stage professionnel · Ubilink, Meylan · avril – juillet 2026</p>
+        <p class="projet-context">Stage professionnel · Ubilink, Meylan · avril - juillet 2026</p>
       </div>
 
       <div class="projet-detail-content">
@@ -46,7 +46,7 @@
           <ul>
             <li>Durée : 10 semaines (stage)</li>
             <li>Personnes : travail individuel, en collaboration avec le tuteur Florian Darnand</li>
-            <li>Type : Projet professionnel – stage entreprise</li>
+            <li>Type : Projet professionnel</li>
             <li>Contexte : site déjà en production, évolution d'une base existante en PHP</li>
           </ul>
 
@@ -54,7 +54,7 @@
           <ul>
             <li>Architecture site mère + 3 sous-sites indépendants avec composants mutualisés (navbar, footer, scripts).</li>
             <li>Charte graphique personnalisée par sous-site via variables CSS (<code>--theme-color</code>, <code>--light-color</code>).</li>
-            <li>Gestion de contenu multilingue (FR/EN) via fichiers JSON — textes séparés du code source.</li>
+            <li>Gestion de contenu multilingue (FR/EN) via fichiers JSON - textes séparés du code source.</li>
             <li>Système de scaling responsif personnalisé en JavaScript : calcul d'un facteur de zoom (<code>--scale</code>) selon la largeur et l'orientation de l'écran, sans multiplication de media queries.</li>
             <li>Animations SVG synchronisées au scroll : couleurs et dégradés animés via <code>animBackgroundSVG()</code>, tracés animés avec <code>stroke-dashoffset</code>.</li>
             <li>Intégration des SVG en inline (via <code>include</code> PHP) pour permettre leur animation par CSS et JavaScript.</li>
@@ -63,10 +63,10 @@
 
           <h3>Aspects techniques</h3>
           <ul>
-            <li>PHP natif avec architecture modulaire — inclusion dynamique des composants communs via la variable <code>$masterPath</code>.</li>
+            <li>PHP natif avec architecture modulaire - inclusion dynamique des composants communs via la variable <code>$masterPath</code>.</li>
             <li>HTML5, CSS3 avec variables CSS globales pour la gestion des thèmes.</li>
             <li>JavaScript pour les interactions dynamiques (menus responsives, système de scaling, animations SVG au scroll).</li>
-            <li>Fichiers JSON comme moteur de contenu — lus côté serveur via <code>file_get_contents</code> et <code>json_decode</code>.</li>
+            <li>Fichiers JSON comme moteur de contenu - lus côté serveur via <code>file_get_contents</code> et <code>json_decode</code>.</li>
             <li>Maquettes conçues sur Figma, utilisées comme référence tout au long du développement.</li>
             <li>Déploiement sur serveur Nginx/PHP existant de l'entreprise.</li>
           </ul>
