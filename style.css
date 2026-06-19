@@ -681,6 +681,16 @@ nav ul li a:hover {
   transform: translateY(-2px);
 }
 
+.projet-icons a i {
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  transition: color .2s ease;
+}
+
+.projet-icons a:hover i {
+  color: var(--color-accent);
+}
+
 .projet-icons img {
   width: 24px;
   height: 24px;
