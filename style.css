@@ -1175,6 +1175,22 @@ footer {
 
 
 /* ===========================
+   ÍCONES ICONIFY (mesma cor do Devicon)
+   =========================== */
+.comp-chips li iconify-icon,
+.projet-icons a iconify-icon {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  transition: color .2s ease;
+}
+
+.comp-chips li:hover iconify-icon,
+.projet-icons a:hover iconify-icon {
+  color: var(--color-accent);
+}
+
+
+/* ===========================
    COMPÉTENCES — LAYOUT EN LIGNES (alinhado)
    =========================== */
 
@@ -1294,5 +1310,102 @@ footer {
   .comp-row-title {
     flex: none;
     padding-top: 0;
+  }
+}
+
+
+/* ===========================
+   PROJETS 
+   =========================== */
+.projets-grid {
+  align-items: start; /* cards recolhidos não esticam */
+}
+
+.projet-card {
+  overflow: hidden;
+}
+
+/* Cabeçalho clicável (foto + título) */
+.projet-header {
+  cursor: pointer;
+}
+
+/* Imagem: rola de cima a baixo no hover, revelando a página inteira */
+.projet-img {
+  height: 220px;
+  overflow: hidden;
+}
+
+.projet-img img {
+  object-position: top center;
+  transition: object-position 3.5s ease;
+}
+
+.projet-card:hover .projet-img img {
+  transform: none; /* cancela o zoom antigo */
+}
+
+.projet-header:hover .projet-img img {
+  object-position: bottom center;
+}
+
+.projet-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 30px;
+}
+
+.projet-title-row h3 {
+  font-size: 1.45rem;
+  margin: 0;
+}
+
+.projet-chevron {
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid var(--color-accent);
+  transition: transform .3s ease;
+}
+
+.projet-card.open .projet-chevron {
+  transform: rotate(180deg);
+}
+
+/* Detalhes recolhidos por padrão */
+.projet-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 30px;
+  transition: max-height .45s ease, opacity .35s ease, padding .45s ease;
+}
+
+.projet-card.open .projet-details {
+  max-height: 800px;
+  opacity: 1;
+  padding: 0 30px 32px;
+}
+
+.projet-details > p {
+  margin: 0 0 20px;
+}
+
+@media (max-width: 600px) {
+  .projet-title-row {
+    padding: 18px 22px;
+  }
+  .projet-title-row h3 {
+    font-size: 1.3rem;
+  }
+  .projet-details {
+    padding: 0 22px;
+  }
+  .projet-card.open .projet-details {
+    padding: 0 22px 26px;
   }
 }
