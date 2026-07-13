@@ -51,6 +51,25 @@ html, body {
 
 
 /* ===========================
+   FUNDO ANIMADO — CONSTELAÇÃO
+   =========================== */
+
+/* O canvas fica fixo atrás de tudo (z-index negativo).
+   Como ele é "position: fixed", cobre sempre a tela visível,
+   mesmo quando a página rola. */
+#constellation-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: block;
+  pointer-events: none; /* não bloqueia cliques no conteúdo acima */
+}
+
+
+/* ===========================
    TÍTULOS DE SEÇÃO (traço de destaque)
    =========================== */
 
@@ -82,7 +101,10 @@ html, body {
    =========================== */
 
 header {
-  background-color: var(--color-bg-primary);
+  /* Vidro fosco: deixa a constelação visível atrás, mas mantém o menu legível */
+  background-color: rgba(35, 32, 49, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 20px 0;
   position: sticky;
   top: 0;
@@ -160,7 +182,9 @@ nav ul li a:hover {
     top: 80px;
     right: 0;
     width: 100%;
-    background-color: var(--color-bg-primary);
+    background-color: rgba(35, 32, 49, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -180,7 +204,7 @@ nav ul li a:hover {
 
 .section-accueil {
   padding: 90px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -273,7 +297,7 @@ nav ul li a:hover {
 
 .section-apropos {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-muted);
 }
 
@@ -384,7 +408,7 @@ nav ul li a:hover {
 
 .section-competences {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -585,7 +609,7 @@ nav ul li a:hover {
 
 .section-projets {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -753,7 +777,7 @@ nav ul li a:hover {
 
 .section-experiences {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -859,7 +883,7 @@ nav ul li a:hover {
 
 .section-formations {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -974,7 +998,7 @@ nav ul li a:hover {
 
 .section-contact {
   padding: 100px 0;
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
 }
 
@@ -1088,7 +1112,7 @@ nav ul li a:hover {
 
 .footer,
 footer {
-  background-color: var(--color-bg-primary);
+  /* Sem fundo sólido: deixa o canvas de constelação visível atrás */
   color: var(--color-text-primary);
   padding: 60px 0 30px;
   margin-top: 0;
