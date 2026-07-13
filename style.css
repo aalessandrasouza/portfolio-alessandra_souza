@@ -42,7 +42,10 @@
 
 html, body {
   background-color: var(--color-bg-primary);
-  overflow-x: hidden;
+  /* CORRIGIDO: "overflow-x: hidden" no html/body cria um contexto de
+     scroll próprio e quebra o "position: sticky" do header.
+     "clip" evita o scroll horizontal sem esse efeito colateral. */
+  overflow-x: clip;
   width: 100%;
 }
 
