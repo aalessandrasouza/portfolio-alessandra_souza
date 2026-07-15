@@ -25,7 +25,6 @@
 
   --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.25);
   --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.35);
-  --shadow-interet: 0 4px 12px rgba(245, 241, 241, 0.08);
   --shadow-img: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -41,10 +40,7 @@
 }
 
 html, body {
-  background-color: var(--color-bg-primary);
-  /* CORRIGIDO: "overflow-x: hidden" no html/body cria um contexto de
-     scroll próprio e quebra o "position: sticky" do header.
-     "clip" evita o scroll horizontal sem esse efeito colateral. */
+  /* Evita rolagem horizontal sem quebrar o header fixo (sticky) */
   overflow-x: clip;
   width: 100%;
 }
@@ -54,9 +50,8 @@ html, body {
    FUNDO ANIMADO — CONSTELAÇÃO
    =========================== */
 
-/* O canvas fica fixo atrás de tudo (z-index negativo).
-   Como ele é "position: fixed", cobre sempre a tela visível,
-   mesmo quando a página rola. */
+/* Canvas fixo atrás de todo o conteúdo. A cor de fundo fica aqui
+   (não no body) para não sobrepor a animação desenhada pelo JS. */
 #constellation-bg {
   position: fixed;
   top: 0;
@@ -65,6 +60,7 @@ html, body {
   height: 100vh;
   z-index: -1;
   display: block;
+  background-color: var(--color-bg-primary);
   pointer-events: none; /* não bloqueia cliques no conteúdo acima */
 }
 
@@ -313,6 +309,13 @@ nav ul li a:hover {
   gap: 50px;
 }
 
+.apropos-img img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: var(--shadow-img);
+}
+
 .apropos-text {
   max-width: 650px;
 }
@@ -418,189 +421,6 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
-.competences-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--color-text-muted);
-  margin-bottom: 50px;
-}
-
-.competences-grid {
-  width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
-  padding-left: clamp(20px, 5vw, 64px);
-  padding-right: clamp(20px, 5vw, 64px);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  align-items: start;
-}
-
-.competence-card {
-  background: var(--color-bg-card);
-  padding: 30px;
-  border-radius: 18px;
-  border: var(--border-card);
-  box-shadow: var(--shadow-card);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.competence-card:hover {
-  transform: translateY(-6px);
-  border: var(--border-card-hover);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 22px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--color-bg-divider);
-}
-
-.card-header img {
-  width: 42px;
-  height: 42px;
-  padding: 7px;
-  background: var(--color-bg-input);
-  border-radius: 12px;
-}
-
-.card-header h3 {
-  font-size: 1.6rem;
-}
-
-/* Título de categoria (nova estrutura, sem ícone PNG no cabeçalho) */
-.comp-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-bg-divider);
-}
-
-/* Skills viram chips */
-.skills-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 10px;
-}
-
-.skills-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--color-bg-input);
-  padding: 9px 12px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  transition: transform .2s ease, background .2s ease;
-}
-
-.skills-list li:hover {
-  background: var(--color-bg-hover);
-  transform: translateY(-2px);
-}
-
-/* Ícone do skill via Devicon (fonte vetorial) */
-.skills-list li i {
-  font-size: 1.45rem;
-  color: var(--color-text-muted);
-  transition: color .2s ease, transform .2s ease;
-}
-
-.skills-list li:hover i {
-  color: var(--color-accent);
-  transform: scale(1.1);
-}
-
-/* Mantido caso ainda use PNG em algum item */
-.skills-list img {
-  width: 26px;
-  height: 26px;
-  transition: transform .2s ease;
-}
-
-.skills-list li:hover img {
-  transform: scale(1.12);
-}
-
-/* Ícone que também é link (referência interna) */
-.skills-list li a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  line-height: 0;
-}
-
-/* Langues — lista limpa com nível em pílula */
-.langues-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.langues-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: var(--color-bg-input);
-  padding: 11px 16px;
-  border-radius: 10px;
-}
-
-.langue-nom {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.langue-niveau {
-  font-size: 0.85rem;
-  color: var(--color-accent-nav);
-  background: rgba(199, 184, 255, 0.12);
-  border: 1px solid rgba(199, 184, 255, 0.25);
-  padding: 3px 12px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-/* Soft skills viram pílulas */
-.skills-list.soft {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skills-list.soft li {
-  background: rgba(199, 184, 255, 0.1);
-  color: var(--color-accent-nav);
-  border: 1px solid rgba(199, 184, 255, 0.25);
-  padding: 7px 15px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-}
-
-.skills-list.soft li:hover {
-  background: rgba(199, 184, 255, 0.18);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 600px) {
-  .card-header h3 {
-    font-size: 1.4rem;
-  }
-
-  .skills-list img {
-    width: 24px;
-    height: 24px;
-  }
-}
 
 
 /* ===========================
@@ -632,6 +452,7 @@ nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 40px;
+  align-items: start; /* cards recolhidos não esticam */
 }
 
 .projet-card {
@@ -649,9 +470,14 @@ nav ul li a:hover {
   box-shadow: var(--shadow-card-hover);
 }
 
-/* Imagens com altura uniforme + zoom sutil no hover */
+/* Cabeçalho clicável (foto + título) */
+.projet-header {
+  cursor: pointer;
+}
+
+/* Imagem: rola de cima a baixo no hover, revelando a foto inteira */
 .projet-img {
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -659,13 +485,14 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
   border-bottom: 1px solid var(--color-bg-divider);
-  transition: transform .4s ease;
+  transition: object-position 3.5s ease;
 }
 
-.projet-card:hover .projet-img img {
-  transform: scale(1.05);
+.projet-header:hover .projet-img img {
+  object-position: bottom center;
 }
 
 .projet-content {
@@ -1120,83 +947,10 @@ footer {
   text-align: center;
 }
 
-.footer-container {
-  width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
-  padding-left: clamp(20px, 5vw, 64px);
-  padding-right: clamp(20px, 5vw, 64px);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-}
-
-.footer-title {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: var(--color-accent);
-}
-
-.footer-col h4 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: var(--color-accent);
-}
-
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-  color: var(--color-text-primary);
-  text-decoration: none;
-  opacity: 0.85;
-  transition: opacity .25s ease, color .25s ease;
-}
-
-.footer-col ul li a:hover {
-  opacity: 1;
-  color: var(--color-accent-hover);
-}
-
-.footer-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.footer-icons img {
-  width: 35px;
-  height: 35px;
-  transition: transform .25s ease, filter .25s ease;
-}
-
-.footer-icons img:hover {
-  transform: scale(1.15);
-  filter: brightness(1.2);
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  opacity: 0.7;
-  font-size: 0.95rem;
-}
-
 @media (max-width: 700px) {
   .footer,
   footer {
     padding: 50px 0 25px;
-  }
-
-  .footer-icons img {
-    width: 32px;
-    height: 32px;
   }
 }
 
@@ -1342,39 +1096,8 @@ footer {
 
 
 /* ===========================
-   PROJETS 
+   PROJETS — detalhes do acordeão
    =========================== */
-.projets-grid {
-  align-items: start; /* cards recolhidos não esticam */
-}
-
-.projet-card {
-  overflow: hidden;
-}
-
-/* Cabeçalho clicável (foto + título) */
-.projet-header {
-  cursor: pointer;
-}
-
-/* Imagem: rola de cima a baixo no hover, revelando a página inteira */
-.projet-img {
-  height: 220px;
-  overflow: hidden;
-}
-
-.projet-img img {
-  object-position: top center;
-  transition: object-position 3.5s ease;
-}
-
-.projet-card:hover .projet-img img {
-  transform: none; /* cancela o zoom antigo */
-}
-
-.projet-header:hover .projet-img img {
-  object-position: bottom center;
-}
 
 .projet-title-row {
   display: flex;
