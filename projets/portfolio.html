@@ -9,70 +9,111 @@
 </head>
 
 <body>
+
+  <!-- Fond animé : constellation (identique à la page d'accueil) -->
+  <canvas id="constellation-bg"></canvas>
+
   <header>
-    <div class="container header-content">
-      <h1>Alessandra Souza.</h1>
+    <div class="navbar">
+      <a class="navbar-brand" href="../index.html">Alessandra Souza.</a>
+
+      <button class="hamburger" aria-label="Basculer le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html#accueil">Accueil</a></li>
+          <li><a href="../index.html#apropos">À&nbsp;propos</a></li>
+          <li><a href="../index.html#competences">Compétences</a></li>
+          <li><a href="../index.html#projets">Projets</a></li>
+          <li><a href="../index.html#experiences">Expériences</a></li>
+          <li><a href="../index.html#formations">Formations</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
+
   <main>
-    <section class="section-projet-detail">
-      <div class="projet-detail-header">
-        <h1>Mon Portfolio</h1>
-      </div>
-      <div class="projet-detail-content">
-        <div class="projet-detail-img">
-          <img src="../img/portfolio.png" alt="Capture d'écran du portfolio">
-          <img src="../img/portfolio2.png" alt="Capture d'écran du portfolio">
-          <img src="../img/portfolio3.png" alt="Capture d'écran du portfolio">
+    <div class="container">
+      <section class="section-projet-detail">
+
+        <div class="projet-detail-header">
+          <h1>Mon Portfolio</h1>
         </div>
-        <div class="projet-detail-text">
-          <h2>Description</h2>
-          <p>Ce projet présente le développement de mon propre portfolio dans le cadre de la SAE. Il est encore en
-            cours de réalisation et sera amélioré au fur et à mesure que j’apprends de nouvelles technologies et outils.
-            L’objectif est de montrer mes compétences en conception web, en programmation et en organisation de projets,
-            tout en continuant à enrichir et optimiser le site.</p>
+
+        <div class="projet-detail-content">
+
+          <div class="projet-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="../img/portfolio.png" alt="Capture d'écran du portfolio - vue 1"></div>
+              <div class="carousel-slide"><img src="../img/portfolio2.png" alt="Capture d'écran du portfolio - vue 2"></div>
+              <div class="carousel-slide"><img src="../img/portfolio3.png" alt="Capture d'écran du portfolio - vue 3"></div>
+            </div>
+            <button class="carousel-arrow carousel-prev" aria-label="Image précédente">‹</button>
+            <button class="carousel-arrow carousel-next" aria-label="Image suivante">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+
+          <div class="projet-detail-text">
+
+            <h2>Description</h2>
+            <p>
+              Ce projet présente le développement de mon propre portfolio dans le cadre de la SAE. Il est encore en
+              cours de réalisation et sera amélioré au fur et à mesure que j'apprends de nouvelles technologies et
+              outils. L'objectif est de montrer mes compétences en conception web, en programmation et en
+              organisation de projets, tout en continuant à enrichir et optimiser le site.
+            </p>
 
             <h3>Informations</h3>
-          <ul>
-            <li>Durée: 4 mois </li>
-            <li>Personnes: 5 personnes. </li>
-            <li>Type: Universitaire</li>
-          </ul>
+            <ul>
+              <li>Durée : 4 mois</li>
+              <li>Personnes : 5 personnes</li>
+              <li>Type : Universitaire</li>
+            </ul>
 
+            <h3>Fonctionnalités</h3>
+            <ul>
+              <li>Navigation claire entre toutes les pages.</li>
+              <li>Menu responsive adapté aux mobiles et tablettes.</li>
+              <li>Formulaire de contact simple.</li>
+              <li>Animations et mise en page moderne avec CSS.</li>
+            </ul>
 
-          <h3>Fonctionnalités</h3>
-          <ul>
-            <li>Navigation claire entre toutes les pages.</li>
-            <li>Menu responsive adapté aux mobiles et tablettes.</li>
-            <li>Formulaire de contact simple.</li>
-            <li>Animations et mise en page moderne avec CSS.</li>
-          </ul>
+            <h3>CSS et mise en page</h3>
+            <ul>
+              <li>Page centrée avec flexbox et fond clair.</li>
+              <li>Menu responsive avec fond coloré.</li>
+              <li>Images adaptées à la largeur avec object-fit: cover.</li>
+              <li>Contenu et footer : style uniforme et cohérent sur toutes les pages.</li>
+            </ul>
 
-          <h3>CSS et mise en page</h3>
-          <ul>
-            <li>Page centrée avec flexbox et fond clair.</li>
-            <li>Menu responsive avec fond coloré.</li>
-            <li>Images adaptées à la largeur avec object-fit: cover.</li>
-            <li>Contenu et footer : style uniforme et cohérent sur toutes les pages.</li>
-          </ul>
+            <h3>Technologies</h3>
+            <ul class="projet-tech-chips">
+              <li><img src="../icon/html.png" alt=""><span>HTML5</span></li>
+              <li><img src="../icon/githuboff.png" alt=""><span>GitHub</span></li>
+            </ul>
 
-
-          <div class="projet-technologies">
-            <img class="icon" src="../icon/html.png" alt="HTML5">
-            <img class="icon" src="../icon/css.png" alt="CSS3">
-            <img class="icon" src="../icon/githuboff.png" alt="GitHub">
           </div>
         </div>
-      </div>
-      <div class="projet-buttons">
-        <a href="https://github.com/aalessandrasouza/portfolio-alessandra_souza.git" target="_blank" class="btn">Voir sur GitHub</a>
-        <a href="../index.html#projets" class="btn">Retour</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Alessandra Souza. Tous droits réservés.</p>
-  </footer>
-</body>
 
+        <div class="projet-buttons">
+          <a href="https://github.com/aalessandrasouza/portfolio-alessandra_souza.git" target="_blank" class="btn">Voir sur GitHub</a>
+          <a href="../index.html#projets" class="btn btn-outline">← Retour aux projets</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Alessandra Souza. Tous droits réservés.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+
+</body>
 </html>

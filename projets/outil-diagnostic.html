@@ -1,145 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Outil de diagnostic commercial - Alessandra Souza</title>
   <link rel="stylesheet" href="style-projets.css" />
 </head>
+
 <body>
 
+  <!-- Fond animé : constellation (identique à la page d'accueil) -->
+  <canvas id="constellation-bg"></canvas>
+
   <header>
-    <div class="container header-content">
-      <h1>Alessandra Souza.</h1>
+    <div class="navbar">
+      <a class="navbar-brand" href="../index.html">Alessandra Souza.</a>
+
+      <button class="hamburger" aria-label="Basculer le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html#accueil">Accueil</a></li>
+          <li><a href="../index.html#apropos">À&nbsp;propos</a></li>
+          <li><a href="../index.html#competences">Compétences</a></li>
+          <li><a href="../index.html#projets">Projets</a></li>
+          <li><a href="../index.html#experiences">Expériences</a></li>
+          <li><a href="../index.html#formations">Formations</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="section-projet-detail">
+    <div class="container">
+      <section class="section-projet-detail">
 
-      <div class="projet-detail-header">
-        <h1> Outil interactif de diagnostic commercial</h1>
-        <p class="projet-context">Stage professionnel · Ubilink, Meylan · avril - juillet 2026</p>
-      </div>
-
-      <div class="projet-detail-content">
-
-        <div class="projet-detail-img">
-          <img src="../img/diagnostic.png" alt="Aperçu de l'outil de diagnostic commercial">
-          <img src="../img/ecran2.png" alt="Aperçu de l'outil ecran 2">
-          <img src="../img/ecran3_1.png" alt="Aperçu de l'outil ecran 3">
-          <img src="../img/ecran3_2.png" alt="Aperçu de l'outil ecran 3">
-          <img src="../img/ecran4.png" alt="Aperçu de l'outil ecran 4">
-          <img src="../img/ecran5.png" alt="Aperçu de l'outil ecran 5">
-          <img src="../img/ecran6.png" alt="Aperçu de l'outil ecran 6">
+        <div class="projet-detail-header">
+          <h1>Outil interactif de diagnostic commercial</h1>
+          <p class="projet-context">Stage professionnel · Ubilink, Meylan · avril - juillet 2026</p>
         </div>
 
-        <div class="projet-detail-text">
+        <div class="projet-detail-content">
 
-          <h2>Description</h2>
-          <p>
-            J'ai conçu et développé une application web destinée aux commerciaux d'Ubilink pour
-            structurer leurs rendez-vous clients. L'outil guide le commercial à travers un questionnaire
-            dynamique personnalisé selon le profil du prospect, réalise le recensement technique de ses
-            espaces et génère automatiquement un devis sur mesure.
-          </p>
-          <p>
-            Ce projet couvre l'ensemble du cycle de développement : analyse des besoins avec l'équipe
-            commerciale, modélisation de la base de données, conception des maquettes Figma,
-            développement frontend et backend, et tests sur scénarios réels.
-          </p>
-
-          <h3>Informations</h3>
-          <ul>
-            <li>Durée : environ 6 semaines (développement principal dans la 2e moitié du stage)</li>
-            <li>Personnes : travail individuel, en collaboration avec le tuteur et l'équipe commerciale</li>
-            <li>Type : Projet professionnel </li>
-            <li>Contexte : outil nouveau, conçu de zéro à partir d'une réflexion métier existante</li>
-          </ul>
-
-          <h3>Fonctionnalités</h3>
-          <ul>
-            <li>
-              <strong>Écran 1 - Création du client :</strong> saisie des informations de l'établissement
-              (nom, responsable, email, téléphone) avec création immédiate d'une session de diagnostic.
-            </li>
-            <li>
-              <strong>Écran 2 - Tableau de bord :</strong> vue d'avancement avec trois étapes séquentielles
-              (Analyse des besoins, Recensement, Devis), chaque étape se déverrouillant après validation
-              de la précédente.
-            </li>
-            <li>
-              <strong>Écran 3 - Questionnaire général à logique conditionnelle :</strong> les questions
-              s'affichent dynamiquement selon les réponses précédentes (champs <code>IS_CONDITIONAL</code>
-              et <code>TRIGGER_VALUE</code> en base de données). Indicateur de progression permanent.
-            </li>
-            <li>
-              <strong>Écran 4 - Sélection du cas d'usage :</strong> que oriente la suite du questionnaire.
-            </li>
-            <li>
-              <strong>Écran 5 - Recensement des espaces :</strong> description de chaque salle, équipements,
-              éléments de mise en scène (éclairage, sonorisation, animations) et configurations d'agencement
-              (Théâtre, Banquet, Cocktail…). Gestion automatique des combinaisons de cloisonnement pour
-              les salles modulables.
-            </li>
-            <li>
-              <strong>Écran 6 - Devis automatique :</strong> calcul côté serveur du montant hors taxe,
-              structuré par postes (pré-production, modélisation 3D, inventaire, configurations, mise en scène,
-              assistant IA, post-production). Résultat enregistré en base pour consultation ultérieure.
-            </li>
-            <li>Reprise possible d'un diagnostic interrompu grâce à l'enregistrement continu de la session.</li>
-          </ul>
-
-          <h3>Architecture de la base de données</h3>
-          <ul>
-            <li><strong>ETABLISSEMENTS :</strong> table centrale — enregistre la phase courante, le nombre de questions répondues et le statut global de la session.</li>
-            <li><strong>QUESTIONS :</strong> cœur du questionnaire dynamique, contient toutes les questions avec leur logique conditionnelle.</li>
-            <li><strong>SPACES :</strong> espaces physiques de l'établissement (salles, halls, terrasses…).</li>
-            <li><strong>PARTITIONS :</strong> combinaisons de cloisonnement pour les salles modulables, utilisées pour calculer les capacités selon les configurations.</li>
-            <li><strong>COST_DETAILS :</strong> détail du devis, quantité, prix unitaire et total par poste.</li>
-          </ul>
-
-          <h3>Aspects techniques</h3>
-          <ul>
-            <li>PHP natif avec architecture MVC - séparation logique métier, affichage et données.</li>
-            <li>MySQL avec moteur InnoDB - gestion des clés étrangères et de l'intégrité référentielle.</li>
-            <li>HTML5, CSS3, JavaScript - interface optimisée pour ordinateur et tablette, utilisable en rendez-vous client.</li>
-            <li>Configuration du questionnaire via fichiers JSON - questions modifiables sans toucher au code.</li>
-            <li>Calcul du devis entièrement côté serveur pour garantir la confidentialité des barèmes internes.</li>
-            <li>Maquettes réalisées sur Figma avant chaque phase de développement.</li>
-          </ul>
-
-          <h3>Difficultés rencontrées</h3>
-          <ul>
-            <li>Évolution régulière du modèle de données au fil des échanges avec l'équipe commerciale - plusieurs réorganisations de tables en cours de développement.</li>
-            <li>Gestion du cloisonnement : distinguer les partitions réelles des partitions combinées pour éviter les incohérences lors de l'enregistrement.</li>
-            <li>Échanges JavaScript ↔ PHP : différences de types de données nécessitant une attention particulière dans les requêtes et jointures.</li>
-            <li>Correction de comportements inattendus dans le module de recensement (création de salle vide, duplication de partitions lors de sauvegardes successives) — fiabilité critique car l'outil est utilisé directement en rendez-vous client.</li>
-          </ul>
-
-          <div class="projet-technologies">
-            <img class="icon" src="../icon/php.png"         alt="PHP">
-            <img class="icon" src="../icon/javascript.png"  alt="JavaScript">
-            <img class="icon" src="../icon/mysql.png"       alt="MySQL">
-            <img class="icon" src="../icon/html.png"        alt="HTML">
-            <img class="icon" src="../icon/css.png"         alt="CSS">
-            <img class="icon" src="../icon/figma.png"       alt="Figma">
-            <img class="icon" src="../icon/githuboff.png"   alt="GitHub">
+          <div class="projet-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="../img/diagnostic.png" alt="Aperçu de l'outil de diagnostic commercial - écran 1"></div>
+              <div class="carousel-slide"><img src="../img/ecran2.png" alt="Aperçu de l'outil - écran 2"></div>
+              <div class="carousel-slide"><img src="../img/ecran3_1.png" alt="Aperçu de l'outil - écran 3, vue 1"></div>
+              <div class="carousel-slide"><img src="../img/ecran3_2.png" alt="Aperçu de l'outil - écran 3, vue 2"></div>
+              <div class="carousel-slide"><img src="../img/ecran4.png" alt="Aperçu de l'outil - écran 4"></div>
+              <div class="carousel-slide"><img src="../img/ecran5.png" alt="Aperçu de l'outil - écran 5"></div>
+              <div class="carousel-slide"><img src="../img/ecran6.png" alt="Aperçu de l'outil - écran 6"></div>
+            </div>
+            <button class="carousel-arrow carousel-prev" aria-label="Image précédente">‹</button>
+            <button class="carousel-arrow carousel-next" aria-label="Image suivante">›</button>
+            <div class="carousel-dots"></div>
           </div>
 
+          <div class="projet-detail-text">
+
+            <h2>Description</h2>
+            <p>
+              J'ai conçu et développé une application web destinée aux commerciaux d'Ubilink pour
+              structurer leurs rendez-vous clients. L'outil guide le commercial à travers un questionnaire
+              dynamique personnalisé selon le profil du prospect, réalise le recensement technique de ses
+              espaces et génère automatiquement un devis sur mesure.
+            </p>
+            <p>
+              Ce projet couvre l'ensemble du cycle de développement : analyse des besoins avec l'équipe
+              commerciale, modélisation de la base de données, conception des maquettes Figma,
+              développement frontend et backend, et tests sur scénarios réels.
+            </p>
+
+            <h3>Informations</h3>
+            <ul>
+              <li>Durée : environ 6 semaines (développement principal dans la 2e moitié du stage)</li>
+              <li>Personnes : travail individuel, en collaboration avec le tuteur et l'équipe commerciale</li>
+              <li>Type : Projet professionnel</li>
+              <li>Contexte : outil nouveau, conçu de zéro à partir d'une réflexion métier existante</li>
+            </ul>
+
+            <h3>Fonctionnalités</h3>
+            <ul>
+              <li>
+                <strong>Écran 1 - Création du client :</strong> saisie des informations de l'établissement
+                (nom, responsable, email, téléphone) avec création immédiate d'une session de diagnostic.
+              </li>
+              <li>
+                <strong>Écran 2 - Tableau de bord :</strong> vue d'avancement avec trois étapes séquentielles
+                (Analyse des besoins, Recensement, Devis), chaque étape se déverrouillant après validation
+                de la précédente.
+              </li>
+              <li>
+                <strong>Écran 3 - Questionnaire général à logique conditionnelle :</strong> les questions
+                s'affichent dynamiquement selon les réponses précédentes (champs <code>IS_CONDITIONAL</code>
+                et <code>TRIGGER_VALUE</code> en base de données). Indicateur de progression permanent.
+              </li>
+              <li>
+                <strong>Écran 4 - Sélection du cas d'usage :</strong> oriente la suite du questionnaire.
+              </li>
+              <li>
+                <strong>Écran 5 - Recensement des espaces :</strong> description de chaque salle, équipements,
+                éléments de mise en scène (éclairage, sonorisation, animations) et configurations d'agencement
+                (Théâtre, Banquet, Cocktail…). Gestion automatique des combinaisons de cloisonnement pour
+                les salles modulables.
+              </li>
+              <li>
+                <strong>Écran 6 - Devis automatique :</strong> calcul côté serveur du montant hors taxe,
+                structuré par postes (pré-production, modélisation 3D, inventaire, configurations, mise en scène,
+                assistant IA, post-production). Résultat enregistré en base pour consultation ultérieure.
+              </li>
+              <li>Reprise possible d'un diagnostic interrompu grâce à l'enregistrement continu de la session.</li>
+            </ul>
+
+            <h3>Architecture de la base de données</h3>
+            <ul>
+              <li><strong>ETABLISSEMENTS :</strong> table centrale — enregistre la phase courante, le nombre de questions répondues et le statut global de la session.</li>
+              <li><strong>QUESTIONS :</strong> cœur du questionnaire dynamique, contient toutes les questions avec leur logique conditionnelle.</li>
+              <li><strong>SPACES :</strong> espaces physiques de l'établissement (salles, halls, terrasses…).</li>
+              <li><strong>PARTITIONS :</strong> combinaisons de cloisonnement pour les salles modulables, utilisées pour calculer les capacités selon les configurations.</li>
+              <li><strong>COST_DETAILS :</strong> détail du devis, quantité, prix unitaire et total par poste.</li>
+            </ul>
+
+            <h3>Aspects techniques</h3>
+            <ul>
+              <li>PHP natif avec architecture MVC - séparation logique métier, affichage et données.</li>
+              <li>MySQL avec moteur InnoDB - gestion des clés étrangères et de l'intégrité référentielle.</li>
+              <li>HTML5, CSS3, JavaScript - interface optimisée pour ordinateur et tablette, utilisable en rendez-vous client.</li>
+              <li>Configuration du questionnaire via fichiers JSON - questions modifiables sans toucher au code.</li>
+              <li>Calcul du devis entièrement côté serveur pour garantir la confidentialité des barèmes internes.</li>
+              <li>Maquettes réalisées sur Figma avant chaque phase de développement.</li>
+            </ul>
+
+            <h3>Difficultés rencontrées</h3>
+            <ul>
+              <li>Évolution régulière du modèle de données au fil des échanges avec l'équipe commerciale - plusieurs réorganisations de tables en cours de développement.</li>
+              <li>Gestion du cloisonnement : distinguer les partitions réelles des partitions combinées pour éviter les incohérences lors de l'enregistrement.</li>
+              <li>Échanges JavaScript ↔ PHP : différences de types de données nécessitant une attention particulière dans les requêtes et jointures.</li>
+              <li>Correction de comportements inattendus dans le module de recensement (création de salle vide, duplication de partitions lors de sauvegardes successives) — fiabilité critique car l'outil est utilisé directement en rendez-vous client.</li>
+            </ul>
+
+            <h3>Technologies</h3>
+            <ul class="projet-tech-chips">
+              <li><img src="../icon/php.png" alt=""><span>PHP</span></li>
+              <li><img src="../icon/javascript.png" alt=""><span>JavaScript</span></li>
+              <li><img src="../icon/mysql.png" alt=""><span>MySQL</span></li>
+              <li><img src="../icon/html.png" alt=""><span>HTML</span></li>
+              <li><img src="../icon/css.png" alt=""><span>CSS</span></li>
+              <li><img src="../icon/figma.png" alt=""><span>Figma</span></li>
+              <li><img src="../icon/githuboff.png" alt=""><span>GitHub</span></li>
+            </ul>
+
+          </div>
         </div>
-      </div>
 
-      <div class="projet-buttons">
-        <a href="../index.html#projets" class="btn">Retour</a>
-      </div>
+        <div class="projet-buttons">
+          <a href="../index.html#projets" class="btn btn-outline">← Retour aux projets</a>
+        </div>
 
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 Alessandra Souza. Tous droits réservés.</p>
   </footer>
+
+  <script src="../script.js"></script>
 
 </body>
 </html>

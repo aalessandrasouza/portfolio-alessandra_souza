@@ -9,39 +9,73 @@
 </head>
 
 <body>
+
+  <!-- Fond animé : constellation (identique à la page d'accueil) -->
+  <canvas id="constellation-bg"></canvas>
+
   <header>
-    <div class="container header-content">
-      <h1>Alessandra Souza.</h1>
+    <div class="navbar">
+      <a class="navbar-brand" href="../index.html">Alessandra Souza.</a>
+
+      <button class="hamburger" aria-label="Basculer le menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html#accueil">Accueil</a></li>
+          <li><a href="../index.html#apropos">À&nbsp;propos</a></li>
+          <li><a href="../index.html#competences">Compétences</a></li>
+          <li><a href="../index.html#projets">Projets</a></li>
+          <li><a href="../index.html#experiences">Expériences</a></li>
+          <li><a href="../index.html#formations">Formations</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-
   </header>
+
   <main>
-    <section class="section-projet-detail">
-      <div class="projet-detail-header">
-        <h1>Site Web Clinique Vétérinaire</h1>
-      </div>
-      <div class="projet-detail-content">
-        <div class="projet-detail-img">
-          <img src="../img/site_clinique1.png" alt="Capture d'écran du site de la clinique vétérinaire">
-          <img src="../img/site_clinique.png" alt="Capture d'écran du site de la clinique vétérinaire">
-          <img src="../img/site_clinique2.png" alt="Capture d'écran du site de la clinique vétérinaire">
-          <img src="../img/site_clinique3.png" alt="Capture d'écran du site de la clinique vétérinaire">
+    <div class="container">
+      <section class="section-projet-detail">
+
+        <div class="projet-detail-header">
+          <h1>Site Web Clinique Vétérinaire</h1>
         </div>
-        <div class="projet-detail-text">
-          <h2>Description</h2>
-          <p>Un site web fictif créé dans le cadre d’un projet d’apprentissage HTML. Le but est de reproduire la
-            structure complète d’un site professionnel avec une architecture claire et une feuille de style commune.</p>
 
-          <h3>Informations</h3>
-          <ul>
-            <li>Durée: 1 mois </li>
-            <li>Personnes: 1 personne. </li>
-            <li>Type: personnel</li>
-          </ul>
+        <div class="projet-detail-content">
 
-          <h3>Structure du projet</h3>
-          <pre>
-/projet-clinique/
+          <div class="projet-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="../img/site_clinique1.png" alt="Capture d'écran du site de la clinique vétérinaire - vue 1"></div>
+              <div class="carousel-slide"><img src="../img/site_clinique.png" alt="Capture d'écran du site de la clinique vétérinaire - vue 2"></div>
+              <div class="carousel-slide"><img src="../img/site_clinique2.png" alt="Capture d'écran du site de la clinique vétérinaire - vue 3"></div>
+              <div class="carousel-slide"><img src="../img/site_clinique3.png" alt="Capture d'écran du site de la clinique vétérinaire - vue 4"></div>
+            </div>
+            <button class="carousel-arrow carousel-prev" aria-label="Image précédente">‹</button>
+            <button class="carousel-arrow carousel-next" aria-label="Image suivante">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+
+          <div class="projet-detail-text">
+
+            <h2>Description</h2>
+            <p>
+              Un site web fictif créé dans le cadre d'un projet d'apprentissage HTML. Le but est de reproduire la
+              structure complète d'un site professionnel avec une architecture claire et une feuille de style commune.
+            </p>
+
+            <h3>Informations</h3>
+            <ul>
+              <li>Durée : 1 mois</li>
+              <li>Personnes : 1 personne</li>
+              <li>Type : personnel</li>
+            </ul>
+
+            <h3>Structure du projet</h3>
+            <pre>/projet-clinique/
 │── index.html          # Page d'accueil
 │── a-propos.html       # Page "À propos"
 │── horaires.html       # Page "Horaires"
@@ -51,46 +85,48 @@
 │   ├── header-accueil.jpg
 │   ├── apropos.jpg
 │   ├── horaires.jpg
-│   └── contact.webp
-        </pre>
+│   └── contact.webp</pre>
 
+            <h3>Fonctionnalités</h3>
+            <ul>
+              <li>Menu de navigation pour toutes les pages.</li>
+              <li>Tableau des horaires avec style pour faciliter la lecture.</li>
+              <li>Formulaire de contact simple avec validation HTML.</li>
+              <li>Carte Google Maps intégrée sur la page Contact.</li>
+            </ul>
 
-    
+            <h3>CSS et mise en page</h3>
+            <ul>
+              <li>Structure générale : page centrée avec flex et fond blanc.</li>
+              <li>Wrapper : sépare le menu et le contenu principal.</li>
+              <li>Menu : largeur fixe et fond bleu clair.</li>
+              <li>Header et images : images adaptées à la largeur avec object-fit: cover.</li>
+              <li>Contenu et footer : fond blanc pour le contenu, footer bleu clair pour le bas de page.</li>
+            </ul>
 
-          <h3>Fonctionnalités</h3>
+            <h3>Technologies</h3>
+            <ul class="projet-tech-chips">
+              <li><img src="../icon/html.png" alt=""><span>HTML5</span></li>
+              <li><img src="../icon/githuboff.png" alt=""><span>GitHub</span></li>
+            </ul>
 
-          <ul>
-            <li>Menu de navigation pour toutes les pages.</li>
-            <li>Tableau des horaires avec style pour faciliter la lecture.</li>
-            <li>Formulaire de contact simple avec validation HTML.</li>
-            <li>Carte Google Maps intégrée sur la page Contact.</li>
-          </ul>
-
-          <h3>CSS et mise en page</h3>
-          <ul>
-            <li>Structure générale : page centrée avec flex et fond blanc.</li>
-            <li>Wrapper : sépare le menu et le contenu principal.</li>
-            <li>Menu : largeur fixe et fond bleu clair.</li>
-            <li>Header et images : images adaptées à la largeur avec object-fit: cover.</li>
-            <li>Contenu et footer : fond blanc pour le contenu, footer bleu clair pour le bas de page.</li>
-          </ul>
-
-          <div class="projet-technologies">
-            <img class="icon" src="../icon/html.png" alt="HTML5">
-            <img class="icon" src="../icon/githuboff.png" alt="GitHub">
           </div>
         </div>
-      </div>
-      <div class="projet-buttons">
-        <a href="https://github.com/aalessandrasouza/Recreer-Wikipedia.git" target="_blank" class="btn">Voir sur
-          GitHub</a>
-        <a href="../index.html#projets" class="btn">Retour</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Alessandra Souza. Tous droits réservés.</p>
-  </footer>
-</body>
 
+        <div class="projet-buttons">
+          <a href="https://github.com/aalessandrasouza/Recreer-Wikipedia.git" target="_blank" class="btn">Voir sur GitHub</a>
+          <a href="../index.html#projets" class="btn btn-outline">← Retour aux projets</a>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Alessandra Souza. Tous droits réservés.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+
+</body>
 </html>

@@ -1,31 +1,47 @@
+/* ===========================
+   VARIÁVEIS DE CORES
+   (idênticas às do site principal, para manter a mesma identidade visual)
+   =========================== */
+
 :root {
-  /* Cores de fundo */
-  --color-bg-primary: #1e1b29;
-  --color-bg-card: #2a2638;
-  --color-bg-input: #3b3550;
-  --color-bg-divider: #3b3550;
+  --color-bg-primary: #232031;
+  --color-bg-card: #2e2a40;
+  --color-bg-input: #3a3552;
+  --color-bg-divider: #403a59;
+  --color-bg-hover: #443e63;
 
-  /* Cores de texto */
-  --color-text-primary: #ffffff;
-  --color-text-muted: #f7f5ff;
+  --color-text-primary: #f5f3fb;
+  --color-text-muted: #b3aecb;
 
-  /* Cores de destaque */
   --color-accent: #ffca2c;
   --color-accent-hover: #ffd861;
   --color-accent-nav: #c7b8ff;
 
-  /* Sombras */
+  --border-card: 1px solid rgba(199, 184, 255, 0.12);
+  --border-card-hover: 1px solid rgba(199, 184, 255, 0.3);
+
   --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.25);
   --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.35);
-  --shadow-interet: 0 4px 12px rgba(245, 241, 241, 0.08);
   --shadow-img: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
-* {
+
+/* ===========================
+   RESET
+   =========================== */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  overflow-x: clip;
+  width: 100%;
 }
 
 body {
@@ -33,30 +49,133 @@ body {
   color: var(--color-text-primary);
   line-height: 1.5;
   min-height: 100vh;
-  padding-top: 150px;
 }
 
-.header-content {
+
+/* ===========================
+   FUNDO ANIMADO — CONSTELAÇÃO
+   (mesmo efeito da página principal, para manter a identidade visual)
+   =========================== */
+
+#constellation-bg {
   position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: block;
   background-color: var(--color-bg-primary);
+  pointer-events: none;
+}
+
+
+/* ===========================
+   HEADER
+   =========================== */
+
+header {
+  background-color: rgba(35, 32, 49, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
-.container {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
+.navbar {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 64px);
+  padding-right: clamp(20px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header h1 {
-  color: var(--color-accent);
-  font-weight: bold;
-  background-color: var(--color-bg-primary);
-  border-radius: 20px 20px 20px 20px;
-  margin-left: 5px;
+/* Marca do site (não é <h1> aqui — o título do projeto assume esse papel) */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color-accent-nav);
+}
+
+
+/* ===========================
+   HAMBURGER (mobile)
+   =========================== */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 28px;
+  height: 3px;
+  background-color: var(--color-text-primary);
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(35, 32, 49, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+
+/* ===========================
+   CONTEÚDO DO PROJETO
+   =========================== */
+
+.container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
 .section-projet-detail {
@@ -64,158 +183,326 @@ header h1 {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 40px 20px;
-  max-width: 1000px;
+  padding: 45px clamp(20px, 5vw, 60px);
+  max-width: 1100px;
   margin: 0 auto;
   background-color: var(--color-bg-card);
   border-radius: 20px;
+  border: var(--border-card);
   box-shadow: var(--shadow-card);
-  scroll-margin-top: 350px;
 }
 
 .projet-detail-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .projet-detail-header h1 {
   color: var(--color-accent);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.projet-context {
+  color: var(--color-text-muted);
+  font-size: 1rem;
 }
 
 .projet-detail-content {
   display: flex;
-  gap: 40px;
+  gap: 45px;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
 
-.projet-detail-img {
-  flex: 1 1 300px;
-  text-align: center;
-  padding: 10px;
-}
-
-.projet-detail-img img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: var(--shadow-img);
-  transition: transform 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.projet-detail-img img:hover {
-  transform: scale(1.05);
-}
-
 .projet-detail-text {
-  flex: 1 1 500px;
+  flex: 1 1 480px;
   color: var(--color-text-primary);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: justify;
-  padding: 35px;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .projet-detail-text h2 {
   color: var(--color-text-primary);
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   font-size: 1.6rem;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.projet-detail-text h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.projet-detail-text h3 {
+  color: var(--color-accent-nav);
+  font-size: 1.2rem;
+  margin: 28px 0 14px;
 }
 
 .projet-detail-text p {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  color: var(--color-text-muted);
 }
 
 .projet-detail-text ul {
-  margin-bottom: 25px;
   list-style: none;
-}
-
-.projet-technologies {
+  margin-bottom: 10px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 15px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.projet-detail-text ul li {
+  background: var(--color-bg-input);
+  padding: 12px 16px;
   border-radius: 10px;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
-.projet-technologies .icon {
-  width: 60px;
-  height: 60px;
-  transition: opacity 0.3s ease;
+.projet-detail-text ul li strong {
+  color: var(--color-text-primary);
 }
 
-.projet-technologies .icon:hover {
-  opacity: 1;
+.projet-detail-text code {
+  background: var(--color-bg-divider);
+  color: var(--color-accent-nav);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.9em;
 }
+
+.projet-detail-text pre {
+  background: var(--color-bg-input);
+  color: var(--color-text-muted);
+  padding: 18px 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+/* ===========================
+   CARROSSEL DE IMAGENS
+   =========================== */
+
+.projet-carousel {
+  position: relative;
+  flex: 1 1 420px;
+  max-width: 520px;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-img);
+  background: var(--color-bg-input);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .45s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(35, 32, 49, 0.6);
+  color: var(--color-text-primary);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background .2s ease, color .2s ease;
+}
+
+.carousel-arrow:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+.carousel-prev {
+  left: 12px;
+}
+
+.carousel-next {
+  right: 12px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 0;
+  background: rgba(35, 32, 49, 0.35);
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-bg-divider);
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.carousel-dot.active {
+  background: var(--color-accent);
+  transform: scale(1.3);
+}
+
+
+/* ===========================
+   CHIPS DE TECNOLOGIAS
+   (mesmo estilo dos chips da página principal)
+   =========================== */
+
+.projet-detail-text .projet-tech-chips {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.projet-detail-text .projet-tech-chips li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--color-bg-input);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.projet-detail-text .projet-tech-chips li:hover {
+  background: var(--color-bg-hover);
+  transform: translateY(-2px);
+}
+
+.projet-detail-text .projet-tech-chips img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ===========================
+   BOTÕES
+   =========================== */
 
 .projet-buttons {
   display: flex;
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .projet-buttons .btn {
   color: var(--color-bg-primary);
   background-color: var(--color-accent);
-  padding: 12px 25px;
+  padding: 12px 26px;
   font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 25px;
+  border-radius: 999px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
 .projet-buttons .btn:hover {
+  background-color: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card-hover);
 }
 
-footer {
-  background-color: var(--color-bg-card);
-  text-align: center;
-  padding: 50px 0;
-  color: var(--color-text-muted);
-  margin-top: 40px;
+.projet-buttons .btn.btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
+
+.projet-buttons .btn.btn-outline:hover {
+  background: rgba(255, 202, 44, 0.12);
+  color: var(--color-accent);
+}
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+  color: var(--color-text-primary);
+  padding: 60px 0 30px;
+  margin-top: 50px;
+  border-top: 3px solid var(--color-accent);
+  text-align: center;
+}
+
+
+/* ===========================
+   RESPONSIVO
+   =========================== */
 
 @media (max-width: 768px) {
   .section-projet-detail {
-    padding: 20px 10px;
-    gap: 20px;
-  }
-
-  .projet-detail-content {
-    flex-direction: column;
-    align-items: center;
+    padding: 30px 16px;
+    gap: 24px;
   }
 
   .projet-detail-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .projet-detail-text {
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
-  .projet-technologies {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .projet-buttons {
-    flex-direction: column;
-    align-items: stretch;
+  .projet-carousel {
+    max-width: 100%;
   }
 }

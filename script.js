@@ -1,5 +1,6 @@
 // ===========================
-// Effet de constellation en arrière-plan du portfolio
+// Effet de constellation en arrière-plan
+// (fonctionne sur n'importe quelle page ayant un <canvas id="constellation-bg">)
 // ===========================
 // Des points se déplacent lentement et se relient par des lignes
 // quand ils sont suffisamment proches, comme des étoiles reliées.
@@ -14,36 +15,30 @@
     '(prefers-reduced-motion: reduce)'
   ).matches;
 
-  // Couleurs reprises de la palette du site
   const DOT_COLOR = 'rgba(199, 184, 255, 0.85)';
   const LINE_RGB = '199, 184, 255'; // --color-accent-nav
   const MOUSE_LINE_RGB = '255, 202, 44'; // --color-accent (doré)
   const MOUSE_DOT_COLOR = 'rgba(255, 202, 44, 0.9)';
 
-  const LINK_DISTANCE = 140; // distance max (px) pour relier deux points entre eux
-  const MOUSE_LINK_DISTANCE = 200; // distance max (px) pour relier un point au curseur
-  const REPEL_DISTANCE = 110; // rayon (px) où le curseur repousse les points
-  const REPEL_STRENGTH = 0.045; // force de la répulsion
-  const FRICTION = 0.96; // freinage progressif après une poussée
-  const SPEED = 0.25; // vitesse de base des points
+  const LINK_DISTANCE = 140;
+  const MOUSE_LINK_DISTANCE = 200;
+  const REPEL_DISTANCE = 110;
+  const REPEL_STRENGTH = 0.045;
+  const FRICTION = 0.96;
+  const SPEED = 0.25;
 
   let width = 0;
   let height = 0;
   let particles = [];
   let animationId = null;
 
-  // Position du curseur (souris ou doigt). "active" = false quand il
-  // n'y a pas d'interaction (souris hors de la fenêtre, pas de doigt posé).
   const mouse = { x: 0, y: 0, active: false };
 
-  // Adapte la taille du canvas à la fenêtre
   function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
   }
 
-  // Nombre de points proportionnel à la taille de l'écran, avec un plafond
-  // pour ne pas surcharger les petits appareils.
   function densityCount() {
     const area = width * height;
     return Math.min(140, Math.max(40, Math.floor(area / 14000)));
@@ -65,7 +60,6 @@
 
   function step() {
     for (const p of particles) {
-      // Répulsion douce autour du curseur
       if (mouse.active) {
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
@@ -78,11 +72,9 @@
         }
       }
 
-      // Freinage progressif : evita que a partícula acelere pra sempre
       p.vx *= FRICTION;
       p.vy *= FRICTION;
 
-      // Mantém uma velocidade mínima, senão tudo para com o tempo
       const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
       if (speed < SPEED * 0.4) {
         const angle = Math.random() * Math.PI * 2;
@@ -93,7 +85,6 @@
       p.x += p.vx;
       p.y += p.vy;
 
-      // Rebondit doucement sur les bords de l'écran
       if (p.x <= 0 || p.x >= width) p.vx *= -1;
       if (p.y <= 0 || p.y >= height) p.vy *= -1;
     }
@@ -102,7 +93,6 @@
   function draw() {
     ctx.clearRect(0, 0, width, height);
 
-    // Lignes entre les points proches (opacité selon la distance)
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const a = particles[i];
@@ -123,7 +113,6 @@
       }
     }
 
-    // Lignes entre le curseur et les points proches (couleur dorée)
     if (mouse.active) {
       for (const p of particles) {
         const dx = p.x - mouse.x;
@@ -142,7 +131,6 @@
       }
     }
 
-    // Points (étoiles)
     ctx.fillStyle = DOT_COLOR;
     for (const p of particles) {
       ctx.beginPath();
@@ -150,7 +138,6 @@
       ctx.fill();
     }
 
-    // Point en surbrillance à la position du curseur
     if (mouse.active) {
       ctx.fillStyle = MOUSE_DOT_COLOR;
       ctx.beginPath();
@@ -170,20 +157,16 @@
     createParticles();
   });
 
-  // Souris : suit le curseur sur toute la fenêtre
   window.addEventListener('mousemove', function (e) {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
     mouse.active = true;
   });
 
-  // "mouseout" com relatedTarget nulo = o cursor realmente saiu da janela
-  // (mais confiável entre navegadores do que "mouseleave" na window)
   document.addEventListener('mouseout', function (e) {
     if (!e.relatedTarget) mouse.active = false;
   });
 
-  // Doigt (mobile/tablette) : même logique que la souris
   window.addEventListener(
     'touchmove',
     function (e) {
@@ -204,8 +187,6 @@
   createParticles();
   draw();
 
-  // Respecte la préférence "mouvement réduit" du système :
-  // dans ce cas, on affiche une image fixe, sans animation.
   if (!prefersReducedMotion) {
     animationId = requestAnimationFrame(loop);
   }
@@ -213,21 +194,102 @@
 
 
 // ===========================
-// Menu hamburger
+// Carrossel de imagens dos projetos
+// (só age se a página tiver algum ".projet-carousel" — senão não faz nada)
 // ===========================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.projet-carousel').forEach(function (carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+
+    if (!track || slides.length === 0) return;
+
+    let current = 0;
+
+    const dots = slides.map(function (_, index) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('aria-label', 'Aller à l\'image ' + (index + 1));
+      dot.addEventListener('click', function () {
+        goTo(index);
+      });
+      if (dotsContainer) dotsContainer.appendChild(dot);
+      return dot;
+    });
+
+    function update() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle('active', index === current);
+      });
+    }
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      update();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        goTo(current - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        goTo(current + 1);
+      });
+    }
+
+    let touchStartX = null;
+
+    track.addEventListener(
+      'touchstart',
+      function (e) {
+        touchStartX = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    track.addEventListener(
+      'touchend',
+      function (e) {
+        if (touchStartX === null) return;
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+
+        if (Math.abs(deltaX) > 40) {
+          deltaX < 0 ? goTo(current + 1) : goTo(current - 1);
+        }
+        touchStartX = null;
+      },
+      { passive: true }
+    );
+
+    update();
+  });
+});
+
+
+// ===========================
+// Menu hamburger
+// (só existe na home — verificação evita erro nas páginas de projeto)
+// ===========================
+document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector('.hamburger');
   const navUl = document.querySelector('nav ul');
 
-  // Bascule du menu en cliquant sur le hamburger
-  hamburger.addEventListener('click', function() {
+  if (!hamburger || !navUl) return;
+
+  hamburger.addEventListener('click', function () {
     navUl.classList.toggle('active');
   });
 
-  // Ferme le menu en cliquant sur un lien
   const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
       navUl.classList.remove('active');
     });
   });
@@ -235,13 +297,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===========================
 // Validation et gestion du formulaire de contact
+// (só existe na home — verificação evita erro nas páginas de projeto)
 // ===========================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('form');
+  if (!form) return;
+
   const emailInput = document.getElementById('email');
   const messageTextarea = document.getElementById('message');
 
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     let isValid = true;
     let errors = [];
 
@@ -271,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===========================
 // Accordéon des projets
+// (só existe na home — querySelectorAll retorna lista vazia nas outras páginas, sem erro)
 // ===========================
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.projet-header').forEach(function (header) {
