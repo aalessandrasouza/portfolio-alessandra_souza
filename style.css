@@ -237,6 +237,51 @@ nav ul li a:hover {
   color: var(--color-text-muted);
 }
 
+.accueil-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn-accueil {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border: 1px solid var(--color-accent);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-accueil:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.btn-accueil-outline {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn-accueil-outline:hover {
+  background-color: rgba(255, 202, 44, 0.12);
+  color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .accueil-buttons {
+    justify-content: center;
+  }
+}
+
 .accueil-image img {
   width: 400px;
   max-width: 100%;
@@ -266,6 +311,10 @@ nav ul li a:hover {
 
   .description {
     margin: 0 auto;
+  }
+
+  .accueil-buttons {
+    justify-content: center;
   }
 
   .accueil-image img {
@@ -534,16 +583,6 @@ nav ul li a:hover {
 .projet-icons a:hover {
   background: var(--color-bg-hover);
   transform: translateY(-2px);
-}
-
-.projet-icons a i {
-  font-size: 1.4rem;
-  color: var(--color-text-muted);
-  transition: color .2s ease;
-}
-
-.projet-icons a:hover i {
-  color: var(--color-accent);
 }
 
 .projet-icons img {
@@ -957,22 +996,6 @@ footer {
 
 
 /* ===========================
-   ÍCONES ICONIFY (mesma cor do Devicon)
-   =========================== */
-.comp-chips li iconify-icon,
-.projet-icons a iconify-icon {
-  font-size: 1.3rem;
-  color: var(--color-text-muted);
-  transition: color .2s ease;
-}
-
-.comp-chips li:hover iconify-icon,
-.projet-icons a:hover iconify-icon {
-  color: var(--color-accent);
-}
-
-
-/* ===========================
    COMPÉTENCES — LAYOUT EN LIGNES (alinhado)
    =========================== */
 
@@ -1038,16 +1061,6 @@ footer {
   text-decoration: none;
   color: inherit;
   line-height: 0;
-}
-
-.comp-chips li i {
-  font-size: 1.3rem;
-  color: var(--color-text-muted);
-  transition: color .2s ease;
-}
-
-.comp-chips li:hover i {
-  color: var(--color-accent);
 }
 
 .comp-chips li img {
